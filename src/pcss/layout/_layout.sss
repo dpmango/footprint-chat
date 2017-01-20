@@ -4,33 +4,81 @@ $mobile: width <= 568px
 $mobile-from: width >= 568px
 $tablet: width <= 768px
 $tablet-from: width <= 768px
-$desktop: width <= 1000px
-$desktop-from: width >= 1000px
+$desktop: width <= 992px
+$desktop-from: width >= 992px
 $wide: width <= 1200px
 $wide-from: width >= 1200px
 $hd: width <= 1680px
 $hd-from: width >= 1680px
 
 // variables
-$fontColor: #333
-$colorGreen: #4ab68f
-$colorRed: #f45b63
-$colorYellow: #fda737
-$colorOrange: #f46d36
-$darkColor: #101226
+$fontColor: #2a2a2a
+$borderColor: #eaeaea
+$darkBg: #3e3e3e
+$grayBg: #e0e0e0
+$yellowColor: #fcda00
+
+
 
 *
   box-sizing: border-box
 
 a
   color: inherit
+  text-decoration: none
   &:hover, &:focus, &:visited
     text-decoration: none
 
 body, html
   background: white
   color: $fontColor
-  font-family: Helvetica
+  font-family: 'ProximaNova-Light', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif
   font-size: 14px
   max-width: 100%
   overflow-x: hidden
+
+.container
+  height: 100vh
+  max-width: 100%
+  width: 100%
+
+.sidebar-left
+  position: fixed
+  top: 0
+  left: 0
+  bottom: 0
+  background: $yellowColor
+  height: 100vh
+  width: 80px
+  max-width: 80px
+  font-size: 1em
+
+.chat
+  display: flex
+  flex-direction: column
+  flex: 1 0 auto
+  position: relative
+  overflow: hidden
+  height: 100%
+  width: auto
+  margin-left: 80px
+  &__scrollable-area
+    position: absolute
+    top: 0px
+    left: 0px
+    right: 0px
+    bottom: 80px
+    overflow: scroll
+    margin-right: 0px
+    margin-bottom: 0px
+  &__writing-area
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    width: 100%
+    &__wrapper
+      background: $grayBg
+      height: 80px
+
+.sidebar-right

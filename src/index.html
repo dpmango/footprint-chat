@@ -1,41 +1,39 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <!-- MADE WITH LOVE BY <> SERGEY KHMELEVSKOY </>-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Site name</title>
-    <!--build:js js/main.min.js-->
-    <script src="/js/lib/jquery-3.1.1.min.js"></script>
-    <script src="/js/main.js"></script>
-    <!--endbuild-->
-    <!--build:css css/style.min.css--><link rel="stylesheet" href="css/style.css" type="text/css" />
-    <!--endbuild--><!--[if lt IE 9]>
-<script src="bower_components/html5shiv/dist/html5shiv.js"></script>
-<![endif]-->
-  </head>
+<html></html>
+<head>
+  <!-- MADE WITH LOVE BY <> SERGEY KHMELEVSKOY </>-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Chat</title>
+  <!--build:js js/main.min.js-->
+  <script src="/js/lib/jquery-3.1.1.min.js"></script>
+  <script src="/js/main.js"></script>
+  <!--endbuild-->
+  <!--build:css css/style.min.css-->
+  <link rel="stylesheet" href="components/normalize-css/normalize.css" type="text/css">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <!--endbuild-->
   <body>
-    <!-- HEADER::START-->
-    <header class="header">
-      <div class="section">
-        <div class="row">
-          <div class="col-sm-12">
-            <li>Uno</li>
-            <li>Dos</li>
-            <li>Tres</li>
-            <li>Cuatro</li>
-            <li>Cinco</li>
-            <li>Seis</li>
+    <div class="container">
+      <!-- LEFT SIDEBAR-->
+      <div class="sidebar-left">
+        <div class="sidebar-left__wrapper"><a class="sidebar-left__nav sidebar-left__nav--logo" href="#"><i class="ico ico-logo">logo</i></a><a class="sidebar-left__nav" href="#"><i class="ico"></i><span class="sidebar-left__nav-title">Search</span></a><a class="sidebar-left__nav" href="#"><i class="ico"></i><span class="sidebar-left__nav-title">Notifications</span></a><a class="sidebar-left__nav" href="#"><i class="ico"></i><span class="sidebar-left__nav-title">Messages</span></a><a class="sidebar-left__nav" href="#"><i class="ico"></i><span class="sidebar-left__nav-title">Mentions</span></a><a class="sidebar-left__nav" href="#"><i class="ico"></i><span class="sidebar-left__nav-title">Files</span></a></div>
+      </div>
+      <!-- CHAT CONTENT-->
+      <div class="chat">
+        <div class="chat__scrollable-area">
+          <div class="chat__header" style="background-image: url('../images/chat_header.png')"></div>
+          <div class="chat__controls"></div>
+          <div class="chat__messages">
+            <div class="chat__message"></div>
           </div>
         </div>
+        <div class="chat__writing-area">
+          <div class="chat__writing-area__wrapper">11</div>
+        </div>
       </div>
-    </header>
-    <!--HEADER::END-->
-    <!--SECTION::START-->
-    <section class="section"></section>
-    <!--SECTION::END-->
-    <!-- HEADER::START-->
-    <footer class="footer"></footer>
-    <!--HEADER::END-->
+      <!-- RIGHT SIDEBAR-->
+      <div class="sidebar-right"></div>
+    </div>
   </body>
-</html>
+</head>

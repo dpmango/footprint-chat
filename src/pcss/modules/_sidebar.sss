@@ -1,0 +1,26 @@
+// SIDEBAR LEFT
+
+.sidebar-left
+
+  &__wrapper
+    display: flex
+    flex-direction: column
+    position: relative
+    z-index: 99
+    height: 100%
+    box-shadow: 0px 0 20px color(black a(20%))
+  &__nav
+    display: block
+    flex: 0 1 80px
+    height: 80px
+    width: 80px
+    text-align: center
+    padding: 10px 2px
+    transition: background .3s ease-in-out
+    &:hover
+      background: white
+    &--logo
+      background: $darkBg
+      &:hover
+        background: color($darkBg a(90%))
+  &__nav-title
