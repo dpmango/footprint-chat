@@ -1,14 +1,12 @@
 // SIDEBAR LEFT
 
 .sidebar-left
-
   &__wrapper
     display: flex
     flex-direction: column
     position: relative
     z-index: 99
     height: 100%
-    box-shadow: 0px 0 20px color(black a(20%))
   &__nav
     display: flex
     flex-direction: column
@@ -44,3 +42,77 @@
   &__nav-title
     display: block
     margin-top: 5px
+
+// SIDEBAR RIGHT
+
+.sidebar-right
+  &__wrapper
+    display: flex
+    flex-direction: column
+    position: relative
+    z-index: 99
+    height: 100%
+  &__section
+    padding: 24px 20px 13px 20px
+    color: white
+    &--border
+      border-top: 1px solid #656565
+    &--lighter
+      background: #333333
+
+  &__chat-title
+    font-size: 20px
+    font-family: 'ProximaNova-Bold'
+  &__chat-type
+    color: $mutedWhiteColor
+    text-transform: uppercase
+    margin-top: 2px
+    margin-bottom: 10px
+  &__control-dropdown
+    &__title
+      display: flex
+      justify-content: space-between
+      cursor: pointer
+      margin: 0 -20px
+      padding: 7px 20px
+      line-height: 1
+      transition: background .4s ease
+      &:hover
+        background: #333333
+      span
+        span
+          color: #c8c8c8
+      .ico
+        text-align: right
+        font-size: 20px
+        font-family: 'ProximaNova-Bold'
+        margin-top: -1px
+    &__content
+      display: none
+
+  &__profile-title
+    span
+      color: white
+
+  &__profile-progres
+    background: #2a2a2a
+    border-radius: 3px
+    height: 7px
+    overflow: hidden
+    margin-top: 12px
+    margin-bottom: 15px
+    &__fill
+      height: 7px
+      background: #fcda00
+  &__profile-link
+    display: block
+    cursor: pointer
+    line-height: 24px
+    span
+      margin-left: 10px
+      span
+        color: #c8c8c8
+    .ico
+      font-size: 20px
+      font-family: 'ProximaNova-Bold'
+      vertical-align: middle

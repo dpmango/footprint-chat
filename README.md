@@ -1,12 +1,16 @@
-# gulp-starter-pack
-Gulp starter package to use with postcss(or sass), pug, autoprefixer, compile bootstrap, minify and other common front-end tasks
+# Footprint Chat Interactive prototype
 
-__To use:__
+## DEMO LINK
+https://dpmango.github.io/footprint-chat/
+
+## Installation
+
+__Local install:__
 - Install node.js and npm
 - Run `npm i`
 - Run `gulp` (default tast)
 - Work with `/src` folder and get the processing result in /dist
 
-__Production__
+__Production:__
 - Run `gulp build`
 - Check compiled result in `/dist` folder

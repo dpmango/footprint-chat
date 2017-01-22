@@ -19,7 +19,7 @@ $grayBg: #e0e0e0
 $yellowColor: #fcda00
 $blueColor: #007fe0
 $grayColor: #525252
-
+$mutedWhiteColor: #c8c8c8
 
 
 *
@@ -82,13 +82,17 @@ body, html
   height: 100%
   width: auto
   margin-left: 80px
+  margin-right: 240px
   background: #eaeaea
+  transition: margin .4s ease-out
+  @media($desktop)
+    margin-right: 0
   &__scrollable-area
     position: absolute
     top: 0px
     left: 0px
     right: 0px
-    bottom: 80px
+    bottom: 72px
     overflow: scroll
     margin-right: 0px
     margin-bottom: 0px
@@ -108,3 +112,19 @@ body, html
     flex-direction: column
 
 .sidebar-right
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  background: $fontColor
+  height: 100vh
+  width: 240px
+  max-width: 240px
+  font-size: 1em
+  z-index: 99
+  box-shadow: -5px 0px 25px color(black a(20%))
+  transition: transform .5s ease-out
+  @media($desktop)
+    transform: translate3d(240px, 0, 0)
+    &.active
+      transform: translate3d(0, 0, 0)
