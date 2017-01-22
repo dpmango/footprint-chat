@@ -82,11 +82,147 @@ head
               li.chat__navigation__toggler(data-tab="NaviApps") Apps
 
           .chat__messages
-            .chat__message
+            .chat__message(data-id="")
+              .chat__message__wrapper--self
+                .chat__message__profile-pic
+                  img(src="images/profile_pic_1.png")
+                .chat__message__author
+                  | Francesca Lee
+                  span Sat, Sep 3, 12:08 PM
+                .chat__message__content
+                  p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In est felis, molestie interdum mi eget, rutrum placerat eros. Vestibulum venenatis risus tristique ullamcorper posuere.
+                .chat__message__icon
+                  i.ico.ico-message-buble
+              .chat__message__wrapper--replies
+                .chat__message__replies-count
+                  i.ico.ico-message-buble
+                  p <span>2</span> replies from Chris and Karen
+            //next message
+            .chat__message(data-id="" data-origin="").chat__message--comment
+              .chat__message__wrapper--self
+                .chat__message__profile-pic
+                  img(src="images/profile_pic_2.png")
+                .chat__message__author
+                  | Chris McCoy
+                  span Sat, Sep 3, 15:08 PM
+                .chat__message__content
+                  p Proin diam lacus, vestibulum vitae dolor eget, sollicitudin molestie ipsum. Praesent et erat pellent esque, dignissim metus quis, porta mi. Quisque quam eros, suscipit eget massa ut, laoreet luctus sem. Morbi lobortis tincidunt nisi, et congue arcu faucibus id dapibus vel leo.
+                .chat__message__icon
+            //next message
+            .chat__message(data-id="" data-origin="").chat__message--comment
+              .chat__message__wrapper--self
+                .chat__message__profile-pic
+                  img(src="images/profile_pic_3.png")
+                .chat__message__author
+                  | Karen Moore
+                  span Sat, Sep 3, 17:38 PM
+                .chat__message__content
+                  p <a href="#">@ChrisMcCoy</a> Mauris ac diam eget orci placerat faucibus in venenatis mi.
+                .chat__message__icon
+                  i.ico.ico-message-mention
+            //next message
+            .chat__message(data-id="")
+              .chat__message__wrapper--self
+                .chat__message__profile-pic
+                  img(src="images/profile_pic_1.png")
+                .chat__message__author
+                  | Francesca Lee
+                  span Sun, Sep 4, 08:08 AM
+                .chat__message__content
+                  p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In est felis, molestie interdum mi eget, rutrum placerat eros. Vestibulum venenatis risus tristique ullamcorper posuere.
+                .chat__message__icon
+
+            //next message
+            .chat__message(data-id="")
+              .chat__message__wrapper--self
+                .chat__message__profile-pic
+                  img(src="images/profile_pic_3.png")
+                .chat__message__author
+                  | Karen Moore
+                  span Sun, Sep 4, 10:10 AM
+                .chat__message__content
+                  .chat__message__content__attachment
+                    .chat__message__attachment__preview
+                      img(src="images/Koala.png")
+                    .chat__message__attachment__info
+                      .chat__message__attachment__info__name
+                        span Koala.png
+                        span.chat__message__attachment__info__version v 1.0
+                      .chat__message__attachment__info__description Picture of a koala bear.
+                      .chat__message__attachment__info__size 795KB PNG file
+                .chat__message__icon
+                  i.ico.ico-message-file
+
+            // JUST COPY/PASTE SAME STUFF HERE
+            .chat__message(data-id="")
+              .chat__message__wrapper--self
+                .chat__message__profile-pic
+                  img(src="images/profile_pic_1.png")
+                .chat__message__author
+                  | Francesca Lee
+                  span Sat, Sep 3, 12:08 PM
+                .chat__message__content
+                  p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In est felis, molestie interdum mi eget, rutrum placerat eros. Vestibulum venenatis risus tristique ullamcorper posuere.
+                .chat__message__icon
+                  i.ico.ico-message-buble
+              .chat__message__wrapper--replies
+                .chat__message__replies-count
+                  i.ico.ico-message-buble
+                  p <span>2</span> replies from Chris and Karen
+            //next message
+            .chat__message(data-id="" data-origin="").chat__message--comment
+              .chat__message__wrapper--self
+                .chat__message__profile-pic
+                  img(src="images/profile_pic_2.png")
+                .chat__message__author
+                  | Chris McCoy
+                  span Sat, Sep 3, 15:08 PM
+                .chat__message__content
+                  p Proin diam lacus, vestibulum vitae dolor eget, sollicitudin molestie ipsum. Praesent et erat pellent esque, dignissim metus quis, porta mi. Quisque quam eros, suscipit eget massa ut, laoreet luctus sem. Morbi lobortis tincidunt nisi, et congue arcu faucibus id dapibus vel leo.
+                .chat__message__icon
+            //next message
+            .chat__message(data-id="" data-origin="").chat__message--comment
+              .chat__message__wrapper--self
+                .chat__message__profile-pic
+                  img(src="images/profile_pic_3.png")
+                .chat__message__author
+                  | Karen Moore
+                  span Sat, Sep 3, 17:38 PM
+                .chat__message__content
+                  p <a href="#">@ChrisMcCoy</a> Mauris ac diam eget orci placerat faucibus in venenatis mi.
+                .chat__message__icon
+                  i.ico.ico-message-mention
+            //next message
+            .chat__message(data-id="" data-origin="").chat__message--comment
+              .chat__message__wrapper--self
+                .chat__message__profile-pic
+                  img(src="images/profile_pic_2.png")
+                .chat__message__author
+                  | Chris McCoy
+                  span Sat, Sep 3, 15:08 PM
+                .chat__message__content
+                  p Proin diam lacus, vestibulum vitae dolor eget, sollicitudin molestie ipsum. Praesent et erat pellent esque, dignissim metus quis, porta mi. Quisque quam eros, suscipit eget massa ut, laoreet luctus sem. Morbi lobortis tincidunt nisi, et congue arcu faucibus id dapibus vel leo.
+                .chat__message__icon
+            //next message
+            .chat__message(data-id="")
+              .chat__message__wrapper--self
+                .chat__message__profile-pic
+                  img(src="images/profile_pic_1.png")
+                .chat__message__author
+                  | Francesca Lee
+                  span Sun, Sep 4, 08:08 AM
+                .chat__message__content
+                  p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In est felis, molestie interdum mi eget, rutrum placerat eros. Vestibulum venenatis risus tristique ullamcorper posuere.
+                .chat__message__icon
+
 
         .chat__writing-area
-          .chat__writing-area__wrapper 11
-
-
+          .chat__writing-area__wrapper
+            input.chat__writing-area__new-message(type="text" placeholder="Type a message ...")
+            button.chat__writing-area__submit-message(type="submit")
+          .chat__writing-area__smile
+            i.ico.ico-message-smile
+          .chat__writing-area__attach
+            i.ico.ico-message-attach
       // RIGHT SIDEBAR
       .sidebar-right

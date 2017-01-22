@@ -17,6 +17,8 @@ $borderColor: #eaeaea
 $darkBg: #3e3e3e
 $grayBg: #e0e0e0
 $yellowColor: #fcda00
+$blueColor: #007fe0
+$grayColor: #525252
 
 
 
@@ -35,7 +37,15 @@ ul
   padding: 0
   li
     display: inline-block
-    
+
+p
+  margin: 0
+  padding: 0
+  padding-bottom: 10px
+
+input, textarea
+  &:focus
+    outline: none
 
 body, html
   background: white
@@ -60,6 +70,8 @@ body, html
   width: 80px
   max-width: 80px
   font-size: 1em
+  z-index: 99
+  box-shadow: 0px 0px 25px color(black a(20%))
 
 .chat
   display: flex
@@ -70,6 +82,7 @@ body, html
   height: 100%
   width: auto
   margin-left: 80px
+  background: #eaeaea
   &__scrollable-area
     position: absolute
     top: 0px
@@ -87,6 +100,11 @@ body, html
     width: 100%
     &__wrapper
       background: $grayBg
-      height: 80px
+      height: 72px
+      position: relative
+      padding: 17px
+  &__messages
+    display: flex
+    flex-direction: column
 
 .sidebar-right
