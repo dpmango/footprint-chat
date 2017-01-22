@@ -17,13 +17,35 @@
     <div class="container">
       <!-- LEFT SIDEBAR-->
       <div class="sidebar-left">
-        <div class="sidebar-left__wrapper"><a class="sidebar-left__nav sidebar-left__nav--logo" href="#"><i class="ico ico-logo">logo</i></a><a class="sidebar-left__nav" href="#"><i class="ico"></i><span class="sidebar-left__nav-title">Search</span></a><a class="sidebar-left__nav" href="#"><i class="ico"></i><span class="sidebar-left__nav-title">Notifications</span></a><a class="sidebar-left__nav" href="#"><i class="ico"></i><span class="sidebar-left__nav-title">Messages</span></a><a class="sidebar-left__nav" href="#"><i class="ico"></i><span class="sidebar-left__nav-title">Mentions</span></a><a class="sidebar-left__nav" href="#"><i class="ico"></i><span class="sidebar-left__nav-title">Files</span></a></div>
+        <div class="sidebar-left__wrapper">
+          <!-- logo--><a class="sidebar-left__nav sidebar-left__nav--logo" href="#"><span class="sidebar-left__nav-icon"><i class="ico ico-logo"></i></span></a>
+          <!-- search--><a class="sidebar-left__nav" href="#"><span class="sidebar-left__nav-icon"><i class="ico ico-search"></i></span><span class="sidebar-left__nav-title">Search</span></a>
+          <!-- notifications--><a class="sidebar-left__nav" href="#"><span class="sidebar-left__nav-icon"><i class="ico ico-notifications"></i></span><span class="sidebar-left__nav-title">Notifications</span></a>
+          <!-- Favorites--><a class="sidebar-left__nav" href="#"><span class="sidebar-left__nav-icon"><i class="ico ico-favorites"></i></span><span class="sidebar-left__nav-title">Favorites</span></a>
+          <!-- messages--><a class="sidebar-left__nav" href="#"><span class="sidebar-left__nav-icon"><i class="ico ico-messages"></i></span><span class="sidebar-left__nav-title">Messages</span></a>
+          <!-- mentions--><a class="sidebar-left__nav" href="#"><span class="sidebar-left__nav-icon"><i class="ico ico-mentions"></i></span><span class="sidebar-left__nav-title">Mentions</span></a>
+          <!-- files--><a class="sidebar-left__nav" href="#"><span class="sidebar-left__nav-icon"><i class="ico ico-files"></i></span><span class="sidebar-left__nav-title">Files</span></a>
+        </div>
       </div>
       <!-- CHAT CONTENT-->
       <div class="chat">
         <div class="chat__scrollable-area">
           <div class="chat__header" style="background-image: url('../images/chat_header.png')"></div>
-          <div class="chat__controls"></div>
+          <!-- controls(subheaders)-->
+          <div class="chat__controls">
+            <div class="chat__controls__name"><span class="chat__controls__chat-name">Staff</span><i class="ico ico-private"></i>
+              <div class="chat__controls__chat-description">The is closed chat for the management of Footprint Inc.</div>
+            </div>
+            <div class="chat__controls__icons"><a class="chat__controls__icon-menu" href="#"><i class="ico ico-user"></i></a><a class="chat__controls__icon-menu" href="#"><i class="ico ico-share"></i></a><a class="chat__controls__icon-menu" href="#"><i class="ico ico-settings"></i></a></div>
+          </div>
+          <!-- chat navigation-->
+          <div class="chat__navigation">
+            <ul class="chat__navigation__tabs">
+              <li class="chat__navigation__toggler active" data-tab="NaviChat">Chat</li>
+              <li class="chat__navigation__toggler" data-tab="NaviFiles">Files</li>
+              <li class="chat__navigation__toggler" data-tab="NaviApps">Apps</li>
+            </ul>
+          </div>
           <div class="chat__messages">
             <div class="chat__message"></div>
           </div>

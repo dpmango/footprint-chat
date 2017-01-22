@@ -10,17 +10,37 @@
     height: 100%
     box-shadow: 0px 0 20px color(black a(20%))
   &__nav
-    display: block
+    display: flex
+    flex-direction: column
     flex: 0 1 80px
     height: 80px
     width: 80px
     text-align: center
     padding: 10px 2px
+    justify-content: center
+    align-items: center
     transition: background .3s ease-in-out
     &:hover
       background: white
     &--logo
       background: $darkBg
+      .sidebar-left__nav-icon
+        height: 25px
       &:hover
         background: color($darkBg a(90%))
+  &__nav-icon
+    height: 20px
+    width: 100%
+    display: block
+    .ico
+      display: block
+      // fill: currentColor
+      height: 100%
+      width: 100%
+      background-repeat: no-repeat
+      background-position: center
+      background-size: contain
+
   &__nav-title
+    display: block
+    margin-top: 5px

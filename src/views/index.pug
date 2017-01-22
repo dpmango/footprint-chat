@@ -21,22 +21,39 @@ head
       // LEFT SIDEBAR
       .sidebar-left
         .sidebar-left__wrapper
+          // logo
           a(href="#").sidebar-left__nav.sidebar-left__nav--logo
-            i.ico.ico-logo logo
+            span.sidebar-left__nav-icon
+              i.ico.ico-logo
+          // search
           a(href="#").sidebar-left__nav
-            i.ico
+            span.sidebar-left__nav-icon
+              i.ico.ico-search
             span.sidebar-left__nav-title Search
+          // notifications
           a(href="#").sidebar-left__nav
-            i.ico
+            span.sidebar-left__nav-icon
+              i.ico.ico-notifications
             span.sidebar-left__nav-title Notifications
+          // Favorites
           a(href="#").sidebar-left__nav
-            i.ico
+            span.sidebar-left__nav-icon
+              i.ico.ico-favorites
+            span.sidebar-left__nav-title Favorites
+          // messages
+          a(href="#").sidebar-left__nav
+            span.sidebar-left__nav-icon
+              i.ico.ico-messages
             span.sidebar-left__nav-title Messages
+          // mentions
           a(href="#").sidebar-left__nav
-            i.ico
+            span.sidebar-left__nav-icon
+              i.ico.ico-mentions
             span.sidebar-left__nav-title Mentions
+          // files
           a(href="#").sidebar-left__nav
-            i.ico
+            span.sidebar-left__nav-icon
+              i.ico.ico-files
             span.sidebar-left__nav-title Files
 
 
@@ -44,7 +61,26 @@ head
       .chat
         .chat__scrollable-area
           .chat__header(style="background-image: url('../images/chat_header.png')")
+          // controls(subheaders)
           .chat__controls
+            .chat__controls__name
+              span.chat__controls__chat-name Staff
+              i.ico.ico-private
+              .chat__controls__chat-description The is closed chat for the management of Footprint Inc.
+            .chat__controls__icons
+              a(href="#").chat__controls__icon-menu
+                i.ico.ico-user
+              a(href="#").chat__controls__icon-menu
+                i.ico.ico-share
+              a(href="#").chat__controls__icon-menu
+                i.ico.ico-settings
+          // chat navigation
+          .chat__navigation
+            ul.chat__navigation__tabs
+              li.chat__navigation__toggler.active(data-tab="NaviChat") Chat
+              li.chat__navigation__toggler(data-tab="NaviFiles") Files
+              li.chat__navigation__toggler(data-tab="NaviApps") Apps
+
           .chat__messages
             .chat__message
 
