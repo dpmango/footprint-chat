@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html></html>
+<html lang="en"></html>
 <head>
   <!-- MADE WITH LOVE BY <> SERGEY KHMELEVSKOY </>-->
   <meta charset="UTF-8">
+  <meta http-equiv="cleartype" content="on">
+  <meta name="MobileOptimized" content="320">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Chat</title>
   <script src="js/main.min.js"></script>
@@ -15,7 +19,8 @@
           <!-- logo--><a class="sidebar-left__nav sidebar-left__nav--logo" href="#"><span class="sidebar-left__nav-icon"><i class="ico ico-logo"></i></span></a>
           <!-- search--><a class="sidebar-left__nav" href="#"><span class="sidebar-left__nav-icon"><i class="ico ico-search"></i></span><span class="sidebar-left__nav-title">Search</span></a>
           <!-- notifications--><a class="sidebar-left__nav" href="#"><span class="sidebar-left__nav-icon"><i class="ico ico-notifications"></i></span><span class="sidebar-left__nav-title">Notifications</span></a>
-          <!-- messages--><a class="sidebar-left__nav" href="#"><span class="sidebar-left__nav-icon"><i class="ico ico-messages"></i></span><span class="sidebar-left__nav-title">Messages</span></a>
+          <!-- Favorites--><a class="sidebar-left__nav" href="#"><span class="sidebar-left__nav-icon"><i class="ico ico-favorites"></i></span><span class="sidebar-left__nav-title">Favorites</span></a>
+          <!-- messages--><a class="sidebar-left__nav active" href="#"><span class="sidebar-left__nav-icon"><i class="ico ico-messages"></i></span><span class="sidebar-left__nav-title">Messages</span></a>
           <!-- mentions--><a class="sidebar-left__nav" href="#"><span class="sidebar-left__nav-icon"><i class="ico ico-mentions"></i></span><span class="sidebar-left__nav-title">Mentions</span></a>
           <!-- files--><a class="sidebar-left__nav" href="#"><span class="sidebar-left__nav-icon"><i class="ico ico-files"></i></span><span class="sidebar-left__nav-title">Files</span></a>
         </div>
@@ -23,23 +28,246 @@
       <!-- CHAT CONTENT-->
       <div class="chat">
         <div class="chat__scrollable-area">
+          <!-- mobile header-->
+          <div class="chat__mobile-header">
+            <div class="chat__mobile-header__menu-left"><i class="ico ico-hamburger"></i></div>
+            <div class="chat__mobile-header__name">Footprint HQ</div>
+            <div class="chat__mobile-header__menu-right"><i class="ico ico-logo"></i></div>
+          </div>
+          <!-- mobile subheader-->
+          <div class="chat__mobile-subhead"><i class="ico ico-lock-fill"></i>
+            <div class="chat__mobile-subhead__name">Staff</div><a href="#"><i class="ico ico-exit"></i></a><a href="#"><i class="ico ico-add-user"></i></a><a href="#"><i class="ico ico-search-mobile"></i></a>
+          </div>
           <div class="chat__header" style="background-image: url('../images/chat_header.png')"></div>
+          <!-- controls(subheaders)-->
           <div class="chat__controls">
             <div class="chat__controls__name"><span class="chat__controls__chat-name">Staff</span><i class="ico ico-private"></i>
               <div class="chat__controls__chat-description">The is closed chat for the management of Footprint Inc.</div>
             </div>
-            <div class="chat__controls__icons"><a href="#"><i class="ico ico-private"></i></a></div>
+            <div class="chat__controls__icons"><a class="chat__controls__icon-menu" href="#"><i class="ico ico-user"></i></a><a class="chat__controls__icon-menu" href="#"><i class="ico ico-share"></i></a><a class="chat__controls__icon-menu" href="#"><i class="ico ico-settings"></i></a></div>
+          </div>
+          <!-- chat navigation-->
+          <div class="chat__navigation">
+            <ul class="chat__navigation__tabs">
+              <li class="chat__navigation__toggler active" data-tab="NaviChat">Chat</li>
+              <li class="chat__navigation__toggler" data-tab="NaviFiles">Files</li>
+              <li class="chat__navigation__toggler" data-tab="NaviApps">Apps</li>
+            </ul>
           </div>
           <div class="chat__messages">
-            <div class="chat__message"></div>
+            <div class="chat__message" data-id="">
+              <div class="chat__message__wrapper--self">
+                <div class="chat__message__profile-pic"><img src="images/profile_pic_1.png"></div>
+                <div class="chat__message__author">Francesca Lee<span>Sat, Sep 3, 12:08 PM</span></div>
+                <div class="chat__message__content">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In est felis, molestie interdum mi eget, rutrum placerat eros. Vestibulum venenatis risus tristique ullamcorper posuere.</p>
+                </div>
+                <div class="chat__message__icon"><i class="ico ico-message-buble"></i></div>
+              </div>
+              <div class="chat__message__wrapper--replies">
+                <div class="chat__message__replies-count"><i class="ico ico-message-buble"></i>
+                  <p><span>2</span> replies from Chris and Karen</p>
+                </div>
+              </div>
+            </div>
+            <!--next message-->
+            <div class="chat__message chat__message--comment" data-id="" data-origin="">
+              <div class="chat__message__wrapper--self">
+                <div class="chat__message__profile-pic"><img src="images/profile_pic_2.png"></div>
+                <div class="chat__message__author">Chris McCoy<span>Sat, Sep 3, 15:08 PM</span></div>
+                <div class="chat__message__content">
+                  <p>Proin diam lacus, vestibulum vitae dolor eget, sollicitudin molestie ipsum. Praesent et erat pellent esque, dignissim metus quis, porta mi. Quisque quam eros, suscipit eget massa ut, laoreet luctus sem. Morbi lobortis tincidunt nisi, et congue arcu faucibus id dapibus vel leo.</p>
+                </div>
+                <div class="chat__message__icon"></div>
+              </div>
+            </div>
+            <!--next message-->
+            <div class="chat__message chat__message--comment" data-id="" data-origin="">
+              <div class="chat__message__wrapper--self">
+                <div class="chat__message__profile-pic"><img src="images/profile_pic_3.png"></div>
+                <div class="chat__message__author">Karen Moore<span>Sat, Sep 3, 17:38 PM</span></div>
+                <div class="chat__message__content">
+                  <p><a href="#">@ChrisMcCoy</a> Mauris ac diam eget orci placerat faucibus in venenatis mi.</p>
+                </div>
+                <div class="chat__message__icon"><i class="ico ico-message-mention"></i></div>
+              </div>
+            </div>
+            <!--next message-->
+            <div class="chat__message" data-id="">
+              <div class="chat__message__wrapper--self">
+                <div class="chat__message__profile-pic"><img src="images/profile_pic_1.png"></div>
+                <div class="chat__message__author">Francesca Lee<span>Sun, Sep 4, 08:08 AM</span></div>
+                <div class="chat__message__content">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In est felis, molestie interdum mi eget, rutrum placerat eros. Vestibulum venenatis risus tristique ullamcorper posuere.</p>
+                </div>
+                <div class="chat__message__icon"></div>
+              </div>
+            </div>
+            <!--next message-->
+            <div class="chat__message" data-id="">
+              <div class="chat__message__wrapper--self">
+                <div class="chat__message__profile-pic"><img src="images/profile_pic_3.png"></div>
+                <div class="chat__message__author">Karen Moore<span>Sun, Sep 4, 10:10 AM</span></div>
+                <div class="chat__message__content">
+                  <div class="chat__message__content__attachment">
+                    <div class="chat__message__attachment__preview"><img src="images/Koala.png"></div>
+                    <div class="chat__message__attachment__info">
+                      <div class="chat__message__attachment__info__name"><span>Koala.png</span><span class="chat__message__attachment__info__version">v 1.0</span></div>
+                      <div class="chat__message__attachment__info__description">Picture of a koala bear.</div>
+                      <div class="chat__message__attachment__info__size">795KB PNG file</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="chat__message__icon"><i class="ico ico-message-file"></i></div>
+              </div>
+            </div>
+            <!-- JUST COPY/PASTE SAME STUFF HERE-->
+            <div class="chat__message" data-id="">
+              <div class="chat__message__wrapper--self">
+                <div class="chat__message__profile-pic"><img src="images/profile_pic_1.png"></div>
+                <div class="chat__message__author">Francesca Lee<span>Sat, Sep 3, 12:08 PM</span></div>
+                <div class="chat__message__content">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In est felis, molestie interdum mi eget, rutrum placerat eros. Vestibulum venenatis risus tristique ullamcorper posuere.</p>
+                </div>
+                <div class="chat__message__icon"><i class="ico ico-message-buble"></i></div>
+              </div>
+              <div class="chat__message__wrapper--replies">
+                <div class="chat__message__replies-count"><i class="ico ico-message-buble"></i>
+                  <p><span>2</span> replies from Chris and Karen</p>
+                </div>
+              </div>
+            </div>
+            <!--next message-->
+            <div class="chat__message chat__message--comment" data-id="" data-origin="">
+              <div class="chat__message__wrapper--self">
+                <div class="chat__message__profile-pic"><img src="images/profile_pic_2.png"></div>
+                <div class="chat__message__author">Chris McCoy<span>Sat, Sep 3, 15:08 PM</span></div>
+                <div class="chat__message__content">
+                  <p>Proin diam lacus, vestibulum vitae dolor eget, sollicitudin molestie ipsum. Praesent et erat pellent esque, dignissim metus quis, porta mi. Quisque quam eros, suscipit eget massa ut, laoreet luctus sem. Morbi lobortis tincidunt nisi, et congue arcu faucibus id dapibus vel leo.</p>
+                </div>
+                <div class="chat__message__icon"></div>
+              </div>
+            </div>
+            <!--next message-->
+            <div class="chat__message chat__message--comment" data-id="" data-origin="">
+              <div class="chat__message__wrapper--self">
+                <div class="chat__message__profile-pic"><img src="images/profile_pic_3.png"></div>
+                <div class="chat__message__author">Karen Moore<span>Sat, Sep 3, 17:38 PM</span></div>
+                <div class="chat__message__content">
+                  <p><a href="#">@ChrisMcCoy</a> Mauris ac diam eget orci placerat faucibus in venenatis mi.</p>
+                </div>
+                <div class="chat__message__icon"><i class="ico ico-message-mention"></i></div>
+              </div>
+            </div>
+            <!--next message-->
+            <div class="chat__message chat__message--comment" data-id="" data-origin="">
+              <div class="chat__message__wrapper--self">
+                <div class="chat__message__profile-pic"><img src="images/profile_pic_2.png"></div>
+                <div class="chat__message__author">Chris McCoy<span>Sat, Sep 3, 15:08 PM</span></div>
+                <div class="chat__message__content">
+                  <p>Proin diam lacus, vestibulum vitae dolor eget, sollicitudin molestie ipsum. Praesent et erat pellent esque, dignissim metus quis, porta mi. Quisque quam eros, suscipit eget massa ut, laoreet luctus sem. Morbi lobortis tincidunt nisi, et congue arcu faucibus id dapibus vel leo.</p>
+                </div>
+                <div class="chat__message__icon"></div>
+              </div>
+            </div>
+            <!--next message-->
+            <div class="chat__message" data-id="">
+              <div class="chat__message__wrapper--self">
+                <div class="chat__message__profile-pic"><img src="images/profile_pic_1.png"></div>
+                <div class="chat__message__author">Francesca Lee<span>Sun, Sep 4, 08:08 AM</span></div>
+                <div class="chat__message__content">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In est felis, molestie interdum mi eget, rutrum placerat eros. Vestibulum venenatis risus tristique ullamcorper posuere.</p>
+                </div>
+                <div class="chat__message__icon"></div>
+              </div>
+            </div>
           </div>
         </div>
+        <!-- preloader-->
+        <div class="preloader" aria-busy="true" aria-label="Loading, please wait." role="progressbar"><i class="ico ico-logo"></i></div>
         <div class="chat__writing-area">
-          <div class="chat__writing-area__wrapper">11</div>
+          <div class="chat__writing-area__wrapper">
+            <input class="chat__writing-area__new-message" type="text" placeholder="Type a message ...">
+            <button class="chat__writing-area__submit-message" type="submit"></button>
+          </div>
+          <div class="chat__writing-area__smile"><i class="ico ico-message-smile"></i></div>
+          <div class="chat__writing-area__attach"><i class="ico ico-message-attach"></i></div>
         </div>
       </div>
       <!-- RIGHT SIDEBAR-->
-      <div class="sidebar-right"></div>
+      <div class="sidebar-right">
+        <div class="sidebar-right__wrapper">
+          <div class="sidebar-right__scrollable-area">
+            <div class="sidebar-right__section">
+              <div class="sidebar-right__chat-title">Crossfit, Inc.</div>
+              <div class="sidebar-right__chat-type">Corporate</div>
+              <div class="sidebar-right__control-dropdown">
+                <div class="sidebar-right__control-dropdown__title"><span>35% <span>Onboarded</span></span><i class="ico">+</i></div>
+                <div class="sidebar-right__control-dropdown__content"></div>
+              </div>
+              <div class="sidebar-right__control-dropdown">
+                <div class="sidebar-right__control-dropdown__title"><span>Invite others</span><i class="ico">+</i></div>
+                <div class="sidebar-right__control-dropdown__content"></div>
+              </div>
+            </div>
+            <!-- next section-->
+            <div class="sidebar-right__section sidebar-right__section--lighter">
+              <div class="sidebar-right__profile-title">Your profile is <span>25%</span> complete</div>
+              <div class="sidebar-right__profile-progres">
+                <div class="sidebar-right__profile-progres__fill" style="width: 25%"></div>
+              </div><a class="sidebar-right__profile-link" href="#"><i class="ico">+</i><span><span>Add a profile photo</span> (50%)</span></a><a class="sidebar-right__profile-link" href="#"><i class="ico">+</i><span><span>Join a box</span> (25%)</span></a>
+            </div>
+            <!--next section-->
+            <div class="sidebar-right__section sidebar-right__section--lighter sidebar-right__section--border">
+              <div class="sidebar-right__control-dropdown">
+                <div class="sidebar-right__section-title"><i class="ico ico-home"></i><span>CrosSfit HQ</span><i class="ico ico-toggler">+</i></div>
+                <div class="sidebar-right__control-dropdown__content active"><a class="sidebar-right__content-link show-always" href="#">staff</a><a class="sidebar-right__content-link show-always" href="#">owners</a><a class="sidebar-right__content-link show-always" href="#">crossfit journal</a><a class="sidebar-right__content-link" href="#">my mentions</a><a class="sidebar-right__content-link" href="#">crossfit journal</a><a class="sidebar-right__content-toggler" href="#" data-hidden-cout="3">+3 more...</a></div>
+              </div>
+            </div>
+            <!--next section-->
+            <div class="sidebar-right__section sidebar-right__section--lighter sidebar-right__section--border">
+              <div class="sidebar-right__control-dropdown">
+                <div class="sidebar-right__section-title"><i class="ico ico-pm"></i><span>Private message</span><i class="ico ico-toggler">+</i></div>
+                <div class="sidebar-right__control-dropdown__content active"><a class="sidebar-right__content-link show-always" href="#"><i class="ico ico-status ico-status--online"></i><span>Francesca Lee</span></a><a class="sidebar-right__content-link show-always" href="#"><i class="ico ico-status ico-status--online"></i><span>Karen Moore</span></a><a class="sidebar-right__content-link" href="#"><i class="ico ico-status ico-status--offline"></i><span>Sergey Khmelevs...</span></a><a class="sidebar-right__content-toggler" href="#" data-hidden-cout="1">+1 more...</a></div>
+              </div>
+            </div>
+            <!--next section-->
+            <div class="sidebar-right__section sidebar-right__section--lighter sidebar-right__section--border">
+              <div class="sidebar-right__control-dropdown">
+                <div class="sidebar-right__section-title"><i class="ico ico-private-groups"></i><span>Private groups</span><i class="ico ico-toggler">+</i></div>
+                <div class="sidebar-right__control-dropdown__content active"><a class="sidebar-right__content-link show-always" href="#">employees</a><a class="sidebar-right__content-link show-always" href="#">staff</a><a class="sidebar-right__content-link" href="#">development</a><a class="sidebar-right__content-toggler" href="#" data-hidden-cout="1">+1 more...</a></div>
+              </div>
+            </div>
+            <!--next section-->
+            <div class="sidebar-right__section sidebar-right__section--lighter sidebar-right__section--border">
+              <div class="sidebar-right__control-dropdown">
+                <div class="sidebar-right__section-title"><i class="ico ico-sidebar-members"></i><span>Members (22,841)</span><i class="ico ico-toggler">+</i></div>
+                <div class="sidebar-right__control-dropdown__content">
+                  <div class="sidebar-right__control-dropdown__content active"><a class="sidebar-right__content-link show-always" href="#"><i class="ico ico-status ico-status--online"></i><span>Francesca Lee</span></a><a class="sidebar-right__content-link show-always" href="#"><i class="ico ico-status ico-status--online"></i><span>Karen Moore</span></a><a class="sidebar-right__content-link" href="#"><i class="ico ico-status ico-status--offline"></i><span>Sergey Khmelevs...</span></a><a class="sidebar-right__content-link" href="#"><i class="ico ico-status ico-status--offline"></i><span>Chris McCoy</span></a><a class="sidebar-right__content-toggler" href="#" data-hidden-cout="1">+2 more...</a></div>
+                </div>
+              </div>
+            </div>
+            <!--next section-->
+            <div class="sidebar-right__section sidebar-right__section--lighter sidebar-right__section--border">
+              <div class="sidebar-right__control-dropdown">
+                <div class="sidebar-right__section-title"><i class="ico ico-private-groups"></i><span>BOXES (14,012)</span><i class="ico ico-toggler">+</i></div>
+                <div class="sidebar-right__control-dropdown__content"><a class="sidebar-right__content-link show-always" href="#">employees</a><a class="sidebar-right__content-link show-always" href="#">staff</a><a class="sidebar-right__content-link" href="#">development</a><a class="sidebar-right__content-toggler" href="#" data-hidden-cout="1">+1 more...</a></div>
+              </div>
+            </div>
+            <!--next section-->
+            <div class="sidebar-right__section sidebar-right__section--lighter sidebar-right__section--border">
+              <div class="sidebar-right__control-dropdown">
+                <div class="sidebar-right__section-title"><i class="ico ico-history"></i><span>History</span></div>
+              </div>
+            </div>
+          </div>
+          <!--user info section-->
+          <div class="sidebar-right__user-info">
+            <div class="sidebar-right__user-info__pic"><img src="images/profile_pic_4.png"></div>
+            <div class="sidebar-right__user-info__name">Sergey Khmelevskoy</div><a class="sidebar-right__user-info__more" href="#"><i class="ico ico-more"></i></a><i class="ico ico-status ico-status--online"></i>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </head>

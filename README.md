@@ -1,7 +1,7 @@
 # Footprint Chat Interactive prototype
 
 ## DEMO LINK
-https://dpmango.github.io/footprint-chat/
+https://dpmango.github.io/footprint-chat/dist
 
 ## Installation
 
