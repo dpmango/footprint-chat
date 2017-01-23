@@ -1,0 +1,48 @@
+.preloader
+  height: 80px
+  width: 80px
+  position: absolute
+  top: 50%
+  left: 50%
+  margin-top: -40px
+  margin-left: -40px
+
+  &:before
+    content: ""
+    display: block
+    position: absolute
+    left: -1px
+    top: -1px
+    height: 100%
+    width: 100%
+    animation: rotation 1s linear infinite
+    border: 1px solid #fcda00
+    border-top: 1px solid transparent
+    border-radius: 100%
+
+  .ico-logo
+    position: absolute
+    top: 50%
+    left: 50%
+    height: 34px
+    width: 34px
+    margin-left: -17px
+    margin-top: -17px
+    background-repeat: no-repeat
+    background-position: center
+    background-size: contain
+    animation: wink 1s ease-in-out infinite alternate
+
+@keyframes rotation
+  from
+    transform: rotate(0deg)
+
+  to
+    transform: rotate(359deg)
+
+@keyframes wink
+  from
+    opacity: 0
+
+  to
+    opacity: 1

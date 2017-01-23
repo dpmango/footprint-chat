@@ -67,12 +67,17 @@ body, html
   bottom: 0
   background: $yellowColor
   height: 100vh
+  min-height: 340px
   width: 80px
   max-width: 80px
   font-size: 1em
   z-index: 99
   box-shadow: 0px 0px 25px color(black a(20%))
-
+  transition: transform .5s ease-out
+  @media($mobile)
+    transform: translate3d(-80px, 0, 0)
+    &.active
+      transform: translate3d(0, 0, 0)
 .chat
   display: flex
   flex-direction: column
@@ -87,6 +92,9 @@ body, html
   transition: margin .4s ease-out
   @media($desktop)
     margin-right: 0
+  @media($mobile)
+    margin-left: 0
+
   &__scrollable-area
     position: absolute
     top: 0px
@@ -110,6 +118,15 @@ body, html
   &__messages
     display: flex
     flex-direction: column
+  &.loading
+    .preloader
+      display: block
+    &::after
+      display: block
+      content: ' '
+      position: absolute 0 0 0 0
+      background: color(black a(35%))
+      transition: all .2s ease-in
 
 .sidebar-right
   position: fixed
@@ -117,7 +134,8 @@ body, html
   right: 0
   bottom: 0
   background: $fontColor
-  height: 100vh
+  min-height: 100vh
+  overflow-y: scroll
   width: 240px
   max-width: 240px
   font-size: 1em
@@ -128,3 +146,19 @@ body, html
     transform: translate3d(240px, 0, 0)
     &.active
       transform: translate3d(0, 0, 0)
+  &__scrollable-area
+    display: flex
+    flex-direction: column
+    flex: 1 0 auto
+    position: absolute
+    top: 0px
+    left: 0px
+    right: 0px
+    bottom: 72px
+    overflow: scroll
+    margin-right: 0px
+    margin-bottom: 0px
+
+.preloader
+  display: none
+  z-index: 9

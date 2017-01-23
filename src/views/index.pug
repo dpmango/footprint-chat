@@ -41,7 +41,7 @@ head
               i.ico.ico-favorites
             span.sidebar-left__nav-title Favorites
           // messages
-          a(href="#").sidebar-left__nav
+          a(href="#").sidebar-left__nav.active
             span.sidebar-left__nav-icon
               i.ico.ico-messages
             span.sidebar-left__nav-title Messages
@@ -214,7 +214,9 @@ head
                 .chat__message__content
                   p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In est felis, molestie interdum mi eget, rutrum placerat eros. Vestibulum venenatis risus tristique ullamcorper posuere.
                 .chat__message__icon
-
+        // preloader
+        .preloader(aria-busy='true', aria-label='Loading, please wait.', role='progressbar')
+          i.ico.ico-logo
 
         .chat__writing-area
           .chat__writing-area__wrapper
@@ -227,27 +229,121 @@ head
       // RIGHT SIDEBAR
       .sidebar-right
         .sidebar-right__wrapper
-          .sidebar-right__section
-            .sidebar-right__chat-title Crossfit, Inc.
-            .sidebar-right__chat-type Corporate
-            .sidebar-right__control-dropdown
-              .sidebar-right__control-dropdown__title
-                span 35% <span>Onboarded</span>
+          .sidebar-right__scrollable-area
+            .sidebar-right__section
+              .sidebar-right__chat-title Crossfit, Inc.
+              .sidebar-right__chat-type Corporate
+              .sidebar-right__control-dropdown
+                .sidebar-right__control-dropdown__title
+                  span 35% <span>Onboarded</span>
+                  i.ico +
+                .sidebar-right__control-dropdown__content
+              .sidebar-right__control-dropdown
+                .sidebar-right__control-dropdown__title
+                  span Invite others
+                  i.ico +
+                .sidebar-right__control-dropdown__content
+            // next section
+            .sidebar-right__section.sidebar-right__section--lighter
+              .sidebar-right__profile-title Your profile is <span>25%</span> complete
+              .sidebar-right__profile-progres
+                .sidebar-right__profile-progres__fill(style="width: 25%")
+              a(href="#").sidebar-right__profile-link
                 i.ico +
-              .sidebar-right__control-dropdown__content
-            .sidebar-right__control-dropdown
-              .sidebar-right__control-dropdown__title
-                span Invite others
+                span <span>Add a profile photo</span> (50%)
+              a(href="#").sidebar-right__profile-link
                 i.ico +
-              .sidebar-right__control-dropdown__content
-          // next section
-          .sidebar-right__section.sidebar-right__section--lighter
-            .sidebar-right__profile-title Your profile is <span>25%</span> complete
-            .sidebar-right__profile-progres
-              .sidebar-right__profile-progres__fill(style="width: 25%")
-            a(href="#").sidebar-right__profile-link
-              i.ico +
-              span <span>Add a profile photo</span> (50%)
-            a(href="#").sidebar-right__profile-link
-              i.ico +
-              span <span>Join a box</span> (25%)
+                span <span>Join a box</span> (25%)
+            //next section
+            .sidebar-right__section.sidebar-right__section--lighter.sidebar-right__section--border
+              .sidebar-right__control-dropdown
+                .sidebar-right__section-title
+                  i.ico.ico-home
+                  span CrosSfit HQ
+                  i.ico.ico-toggler +
+                .sidebar-right__control-dropdown__content.active
+                  a(href="#").sidebar-right__content-link.show-always staff
+                  a(href="#").sidebar-right__content-link.show-always owners
+                  a(href="#").sidebar-right__content-link.show-always crossfit journal
+                  a(href="#").sidebar-right__content-link my mentions
+                  a(href="#").sidebar-right__content-link crossfit journal
+                  a(href="#").sidebar-right__content-toggler(data-hidden-cout="3") +3 more...
+            //next section
+            .sidebar-right__section.sidebar-right__section--lighter.sidebar-right__section--border
+              .sidebar-right__control-dropdown
+                .sidebar-right__section-title
+                  i.ico.ico-pm
+                  span Private message
+                  i.ico.ico-toggler +
+                .sidebar-right__control-dropdown__content.active
+                  a(href="#").sidebar-right__content-link.show-always
+                    i.ico.ico-status.ico-status--online
+                    span Francesca Lee
+                  a(href="#").sidebar-right__content-link.show-always
+                    i.ico.ico-status.ico-status--online
+                    span Karen Moore
+                  a(href="#").sidebar-right__content-link
+                    i.ico.ico-status.ico-status--offline
+                    span Sergey Khmelevs...
+                  a(href="#").sidebar-right__content-toggler(data-hidden-cout="1") +1 more...
+            //next section
+            .sidebar-right__section.sidebar-right__section--lighter.sidebar-right__section--border
+              .sidebar-right__control-dropdown
+                .sidebar-right__section-title
+                  i.ico.ico-private-groups
+                  span Private groups
+                  i.ico.ico-toggler +
+                .sidebar-right__control-dropdown__content.active
+                  a(href="#").sidebar-right__content-link.show-always employees
+                  a(href="#").sidebar-right__content-link.show-always staff
+                  a(href="#").sidebar-right__content-link development
+                  a(href="#").sidebar-right__content-toggler(data-hidden-cout="1") +1 more...
+            //next section
+            .sidebar-right__section.sidebar-right__section--lighter.sidebar-right__section--border
+              .sidebar-right__control-dropdown
+                .sidebar-right__section-title
+                  i.ico.ico-sidebar-members
+                  span Members (22,841)
+                  i.ico.ico-toggler +
+                .sidebar-right__control-dropdown__content
+                  .sidebar-right__control-dropdown__content.active
+                    a(href="#").sidebar-right__content-link.show-always
+                      i.ico.ico-status.ico-status--online
+                      span Francesca Lee
+                    a(href="#").sidebar-right__content-link.show-always
+                      i.ico.ico-status.ico-status--online
+                      span Karen Moore
+                    a(href="#").sidebar-right__content-link
+                      i.ico.ico-status.ico-status--offline
+                      span Sergey Khmelevs...
+                    a(href="#").sidebar-right__content-link
+                      i.ico.ico-status.ico-status--offline
+                      span Chris McCoy
+                    a(href="#").sidebar-right__content-toggler(data-hidden-cout="1") +2 more...
+            //next section
+            .sidebar-right__section.sidebar-right__section--lighter.sidebar-right__section--border
+              .sidebar-right__control-dropdown
+                .sidebar-right__section-title
+                  i.ico.ico-private-groups
+                  span BOXES (14,012)
+                  i.ico.ico-toggler +
+                .sidebar-right__control-dropdown__content
+                  a(href="#").sidebar-right__content-link.show-always employees
+                  a(href="#").sidebar-right__content-link.show-always staff
+                  a(href="#").sidebar-right__content-link development
+                  a(href="#").sidebar-right__content-toggler(data-hidden-cout="1") +1 more...
+            //next section
+            .sidebar-right__section.sidebar-right__section--lighter.sidebar-right__section--border
+              .sidebar-right__control-dropdown
+                .sidebar-right__section-title
+                  i.ico.ico-history
+                  span History
+
+          //user info section
+          .sidebar-right__user-info
+            .sidebar-right__user-info__pic
+              img(src="images/profile_pic_4.png")
+            .sidebar-right__user-info__name Sergey Khmelevskoy
+            a(href="#").sidebar-right__user-info__more
+              i.ico.ico-more
+            i.ico.ico-status.ico-status--online

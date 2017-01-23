@@ -6,12 +6,19 @@
   background-repeat: no-repeat
   background-position: center
 
-// mixin
-@define-mixin myIcon $name
-  background: url('../images/$(name).svg') no-repeat center
-  width: 1em
-  height: 1em
+// css icons
+.ico-status
+  border-radius: 50%
+  width: 8px
+  height: 8px
+  margin-right: 4px
+  vertical-align: 1px
+  &--online
+    background: #7fc200
+  &--offline
+    background: color(white a(30%))
 
+// inline svg
 .ico-logo
   background-image: svg-load('../../images/logo.svg')
 .ico-search
@@ -53,3 +60,19 @@
   background-image: svg-load('../../images/ico-message-mention.svg')
 .ico-message-file
   background-image: svg-load('../../images/ico-message-file.svg')
+
+.ico-home
+  background-image: svg-load('../../images/ico-home.svg')
+.ico-pm
+  background-image: svg-load('../../images/ico-pm.svg')
+.ico-private-groups
+  background-image: svg-load('../../images/ico-private-groups.svg')
+.ico-sidebar-members
+  background-image: svg-load('../../images/ico-sidebar-members.svg')
+.ico-boxes
+  background-image: svg-load('../../images/ico-boxes.svg')
+.ico-history
+  background-image: svg-load('../../images/ico-history.svg')
+
+.ico-more
+  background-image: svg-load('../../images/ico-more.svg')

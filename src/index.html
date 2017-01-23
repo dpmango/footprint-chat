@@ -22,7 +22,7 @@
           <!-- search--><a class="sidebar-left__nav" href="#"><span class="sidebar-left__nav-icon"><i class="ico ico-search"></i></span><span class="sidebar-left__nav-title">Search</span></a>
           <!-- notifications--><a class="sidebar-left__nav" href="#"><span class="sidebar-left__nav-icon"><i class="ico ico-notifications"></i></span><span class="sidebar-left__nav-title">Notifications</span></a>
           <!-- Favorites--><a class="sidebar-left__nav" href="#"><span class="sidebar-left__nav-icon"><i class="ico ico-favorites"></i></span><span class="sidebar-left__nav-title">Favorites</span></a>
-          <!-- messages--><a class="sidebar-left__nav" href="#"><span class="sidebar-left__nav-icon"><i class="ico ico-messages"></i></span><span class="sidebar-left__nav-title">Messages</span></a>
+          <!-- messages--><a class="sidebar-left__nav active" href="#"><span class="sidebar-left__nav-icon"><i class="ico ico-messages"></i></span><span class="sidebar-left__nav-title">Messages</span></a>
           <!-- mentions--><a class="sidebar-left__nav" href="#"><span class="sidebar-left__nav-icon"><i class="ico ico-mentions"></i></span><span class="sidebar-left__nav-title">Mentions</span></a>
           <!-- files--><a class="sidebar-left__nav" href="#"><span class="sidebar-left__nav-icon"><i class="ico ico-files"></i></span><span class="sidebar-left__nav-title">Files</span></a>
         </div>
@@ -175,6 +175,8 @@
             </div>
           </div>
         </div>
+        <!-- preloader-->
+        <div class="preloader" aria-busy="true" aria-label="Loading, please wait." role="progressbar"><i class="ico ico-logo"></i></div>
         <div class="chat__writing-area">
           <div class="chat__writing-area__wrapper">
             <input class="chat__writing-area__new-message" type="text" placeholder="Type a message ...">
@@ -187,24 +189,74 @@
       <!-- RIGHT SIDEBAR-->
       <div class="sidebar-right">
         <div class="sidebar-right__wrapper">
-          <div class="sidebar-right__section">
-            <div class="sidebar-right__chat-title">Crossfit, Inc.</div>
-            <div class="sidebar-right__chat-type">Corporate</div>
-            <div class="sidebar-right__control-dropdown">
-              <div class="sidebar-right__control-dropdown__title"><span>35% <span>Onboarded</span></span><i class="ico">+</i></div>
-              <div class="sidebar-right__control-dropdown__content"></div>
+          <div class="sidebar-right__scrollable-area">
+            <div class="sidebar-right__section">
+              <div class="sidebar-right__chat-title">Crossfit, Inc.</div>
+              <div class="sidebar-right__chat-type">Corporate</div>
+              <div class="sidebar-right__control-dropdown">
+                <div class="sidebar-right__control-dropdown__title"><span>35% <span>Onboarded</span></span><i class="ico">+</i></div>
+                <div class="sidebar-right__control-dropdown__content"></div>
+              </div>
+              <div class="sidebar-right__control-dropdown">
+                <div class="sidebar-right__control-dropdown__title"><span>Invite others</span><i class="ico">+</i></div>
+                <div class="sidebar-right__control-dropdown__content"></div>
+              </div>
             </div>
-            <div class="sidebar-right__control-dropdown">
-              <div class="sidebar-right__control-dropdown__title"><span>Invite others</span><i class="ico">+</i></div>
-              <div class="sidebar-right__control-dropdown__content"></div>
+            <!-- next section-->
+            <div class="sidebar-right__section sidebar-right__section--lighter">
+              <div class="sidebar-right__profile-title">Your profile is <span>25%</span> complete</div>
+              <div class="sidebar-right__profile-progres">
+                <div class="sidebar-right__profile-progres__fill" style="width: 25%"></div>
+              </div><a class="sidebar-right__profile-link" href="#"><i class="ico">+</i><span><span>Add a profile photo</span> (50%)</span></a><a class="sidebar-right__profile-link" href="#"><i class="ico">+</i><span><span>Join a box</span> (25%)</span></a>
+            </div>
+            <!--next section-->
+            <div class="sidebar-right__section sidebar-right__section--lighter sidebar-right__section--border">
+              <div class="sidebar-right__control-dropdown">
+                <div class="sidebar-right__section-title"><i class="ico ico-home"></i><span>CrosSfit HQ</span><i class="ico ico-toggler">+</i></div>
+                <div class="sidebar-right__control-dropdown__content active"><a class="sidebar-right__content-link show-always" href="#">staff</a><a class="sidebar-right__content-link show-always" href="#">owners</a><a class="sidebar-right__content-link show-always" href="#">crossfit journal</a><a class="sidebar-right__content-link" href="#">my mentions</a><a class="sidebar-right__content-link" href="#">crossfit journal</a><a class="sidebar-right__content-toggler" href="#" data-hidden-cout="3">+3 more...</a></div>
+              </div>
+            </div>
+            <!--next section-->
+            <div class="sidebar-right__section sidebar-right__section--lighter sidebar-right__section--border">
+              <div class="sidebar-right__control-dropdown">
+                <div class="sidebar-right__section-title"><i class="ico ico-pm"></i><span>Private message</span><i class="ico ico-toggler">+</i></div>
+                <div class="sidebar-right__control-dropdown__content active"><a class="sidebar-right__content-link show-always" href="#"><i class="ico ico-status ico-status--online"></i><span>Francesca Lee</span></a><a class="sidebar-right__content-link show-always" href="#"><i class="ico ico-status ico-status--online"></i><span>Karen Moore</span></a><a class="sidebar-right__content-link" href="#"><i class="ico ico-status ico-status--offline"></i><span>Sergey Khmelevs...</span></a><a class="sidebar-right__content-toggler" href="#" data-hidden-cout="1">+1 more...</a></div>
+              </div>
+            </div>
+            <!--next section-->
+            <div class="sidebar-right__section sidebar-right__section--lighter sidebar-right__section--border">
+              <div class="sidebar-right__control-dropdown">
+                <div class="sidebar-right__section-title"><i class="ico ico-private-groups"></i><span>Private groups</span><i class="ico ico-toggler">+</i></div>
+                <div class="sidebar-right__control-dropdown__content active"><a class="sidebar-right__content-link show-always" href="#">employees</a><a class="sidebar-right__content-link show-always" href="#">staff</a><a class="sidebar-right__content-link" href="#">development</a><a class="sidebar-right__content-toggler" href="#" data-hidden-cout="1">+1 more...</a></div>
+              </div>
+            </div>
+            <!--next section-->
+            <div class="sidebar-right__section sidebar-right__section--lighter sidebar-right__section--border">
+              <div class="sidebar-right__control-dropdown">
+                <div class="sidebar-right__section-title"><i class="ico ico-sidebar-members"></i><span>Members (22,841)</span><i class="ico ico-toggler">+</i></div>
+                <div class="sidebar-right__control-dropdown__content">
+                  <div class="sidebar-right__control-dropdown__content active"><a class="sidebar-right__content-link show-always" href="#"><i class="ico ico-status ico-status--online"></i><span>Francesca Lee</span></a><a class="sidebar-right__content-link show-always" href="#"><i class="ico ico-status ico-status--online"></i><span>Karen Moore</span></a><a class="sidebar-right__content-link" href="#"><i class="ico ico-status ico-status--offline"></i><span>Sergey Khmelevs...</span></a><a class="sidebar-right__content-link" href="#"><i class="ico ico-status ico-status--offline"></i><span>Chris McCoy</span></a><a class="sidebar-right__content-toggler" href="#" data-hidden-cout="1">+2 more...</a></div>
+                </div>
+              </div>
+            </div>
+            <!--next section-->
+            <div class="sidebar-right__section sidebar-right__section--lighter sidebar-right__section--border">
+              <div class="sidebar-right__control-dropdown">
+                <div class="sidebar-right__section-title"><i class="ico ico-private-groups"></i><span>BOXES (14,012)</span><i class="ico ico-toggler">+</i></div>
+                <div class="sidebar-right__control-dropdown__content"><a class="sidebar-right__content-link show-always" href="#">employees</a><a class="sidebar-right__content-link show-always" href="#">staff</a><a class="sidebar-right__content-link" href="#">development</a><a class="sidebar-right__content-toggler" href="#" data-hidden-cout="1">+1 more...</a></div>
+              </div>
+            </div>
+            <!--next section-->
+            <div class="sidebar-right__section sidebar-right__section--lighter sidebar-right__section--border">
+              <div class="sidebar-right__control-dropdown">
+                <div class="sidebar-right__section-title"><i class="ico ico-history"></i><span>History</span></div>
+              </div>
             </div>
           </div>
-          <!-- next section-->
-          <div class="sidebar-right__section sidebar-right__section--lighter">
-            <div class="sidebar-right__profile-title">Your profile is <span>25%</span> complete</div>
-            <div class="sidebar-right__profile-progres">
-              <div class="sidebar-right__profile-progres__fill" style="width: 25%"></div>
-            </div><a class="sidebar-right__profile-link" href="#"><i class="ico">+</i><span><span>Add a profile photo</span> (50%)</span></a><a class="sidebar-right__profile-link" href="#"><i class="ico">+</i><span><span>Join a box</span> (25%)</span></a>
+          <!--user info section-->
+          <div class="sidebar-right__user-info">
+            <div class="sidebar-right__user-info__pic"><img src="images/profile_pic_4.png"></div>
+            <div class="sidebar-right__user-info__name">Sergey Khmelevskoy</div><a class="sidebar-right__user-info__more" href="#"><i class="ico ico-more"></i></a><i class="ico ico-status ico-status--online"></i>
           </div>
         </div>
       </div>
