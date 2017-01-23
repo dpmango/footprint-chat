@@ -730,13 +730,71 @@ body, html {
     background-repeat: no-repeat;
 }
 .chat__controls__icon-menu {
+    position: relative;
     display: inline-block;
     padding: 3px 15px;
-    border-right: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;/* refactor last */
 }
-.chat__controls__icon-menu:last-child {
+.chat__controls__icon-menu__dropdown {
+    position: absolute;
+    display: none;
+    width: 190px;
+    background: white;
+    -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    list-style: none;
+}
+.chat__controls__icon-menu__dropdown li {
+    display: block;
+    padding: 7px 13px;
+    text-align: left;
+    font-size: 15px;
+    -webkit-transition: background .4s ease-in-out;
+    transition: background .4s ease-in-out;
+}
+.chat__controls__icon-menu__dropdown li .ico {
+    margin-top: -3px;
+    margin-right: 10px;
+    width: 17px;
+    height: 17px;
+    background-size: contain;
+    vertical-align: middle;
+}
+.chat__controls__icon-menu__dropdown li:hover {
+    background: #fcda00;
+}
+.chat__controls__icon-menu__dropdown hr {
+    margin: 0;
+    margin-right: 13px;
+    margin-left: 13px;
+    height: 1px;
+    border: none;
+    background: #eaeaea;
+}
+.chat__controls__icon-menu__dropdown.active {
+    right: 0;
+    bottom: 35px;
+    display: block;
+}
+.chat__controls__icon-menu__dropdown.socials {
+    width: 150px;
+}
+.chat__controls__icon-menu__dropdown__img {
+    display: inline-block;
+    overflow: hidden;
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.chat__controls__icon-menu__dropdown__img img {
+    max-width: 100%;
+}
+.chat__controls__icon-menu:last-child, .chat__controls__icon-menu.last {
     padding-right: 0;
     border-color: transparent;
+    border-right: none;
 }
 .chat__navigation {
     display: -webkit-box;
@@ -1116,6 +1174,26 @@ body, html {
 .ico-status--offline {
     background: rgba(255, 255, 255, 0.3);
 }
+.ico-invite {
+    position: relative;
+    overflow: hidden;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='42.4px' height='42.4px'%3E %3Cpath fill-rule='evenodd' stroke='rgb(252, 218, 0)' stroke-width='3.6px' stroke-dasharray='7.2, 3.6' stroke-linecap='butt' stroke-linejoin='miter' fill='none' d='M20.599,2.362 C30.540,2.362 38.599,10.429 38.599,20.381 C38.599,30.332 30.540,38.399 20.599,38.399 C10.658,38.399 2.599,30.332 2.599,20.381 C2.599,10.429 10.658,2.362 20.599,2.362 Z'/%3E %3C/svg%3E");
+    background-size: cover;
+}
+.ico-invite::after {
+    padding-left: 4px;
+    width: 20px;
+    height: 20px;
+    color: #2a2a2a;
+    content: '+';
+    vertical-align: middle;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'ProximaNova-Bold';
+}
 /* inline svg */
 .ico-logo {
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='45.813' height='45.813' viewBox='0 0 45.813 45.813'%3E %3Cmetadata%3E%3C?xpacket begin=' ' id='W5M0MpCehiHzreSzNTczkc9d'?%3E %3Cx:xmpmeta xmlns:x='adobe:ns:meta/' x:xmptk='Adobe XMP Core 5.6-c138 79.159824, 2016/09/14-01:09:01 '%3E %3Crdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns%23'%3E %3Crdf:Description rdf:about=''/%3E %3C/rdf:RDF%3E %3C/x:xmpmeta%3E %3C?xpacket end='w'?%3E%3C/metadata%3E %3Cdefs%3E %3Cstyle%3E .cls-1 { fill: %23fcda00; fill-rule: evenodd; } %3C/style%3E %3C/defs%3E %3Cpath class='cls-1' d='M72.638,50.189h7.047l-22.449,45.8H50.189Zm16.308,0h7.046l-22.449,45.8H66.5Z' transform='translate(-50.188 -50.188)'/%3E %3C/svg%3E");
@@ -1208,6 +1286,18 @@ body, html {
 }
 .ico-search-mobile {
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='57px' height='58px'%3E %3Cpath fill-rule='evenodd' fill='rgb(38, 38, 38)' d='M33.494,47.511 C28.079,47.511 23.108,45.643 19.153,42.537 L4.488,57.231 L0.505,53.241 L15.171,38.546 C12.071,34.583 10.206,29.603 10.206,24.177 C10.206,11.290 20.632,0.842 33.494,0.842 C46.355,0.842 56.781,11.290 56.781,24.177 C56.781,37.064 46.355,47.511 33.494,47.511 ZM33.494,6.676 C23.848,6.676 16.028,14.511 16.028,24.177 C16.028,33.842 23.848,41.678 33.494,41.678 C43.140,41.678 50.959,33.842 50.959,24.177 C50.959,14.511 43.140,6.676 33.494,6.676 Z'/%3E %3C/svg%3E");
+}
+.ico-twiiter-fill {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='37px' height='37px'%3E %3Cpath fill-rule='evenodd' fill='rgb(42, 42, 42)' d='M18.607,36.600 C8.663,36.600 0.601,28.541 0.601,18.600 C0.601,8.658 8.663,0.600 18.607,0.600 C28.551,0.600 36.613,8.658 36.613,18.600 C36.613,28.541 28.551,36.600 18.607,36.600 ZM26.837,11.879 C26.194,12.143 25.552,12.540 24.653,12.672 C22.726,10.160 17.844,12.143 18.743,15.844 C15.403,15.580 13.348,13.994 11.678,12.143 C10.778,13.729 11.549,16.241 12.705,16.902 C12.192,16.902 11.678,16.770 11.292,16.505 C11.421,18.620 12.448,19.546 13.990,20.075 C13.605,20.075 13.091,20.207 12.577,20.075 C13.091,21.529 14.118,22.454 15.789,22.586 C14.632,23.644 12.448,24.305 10.778,24.040 C12.320,24.965 13.990,25.759 16.302,25.626 C21.955,25.362 25.681,21.132 25.809,15.051 C26.451,14.523 27.094,13.994 27.222,13.333 C26.708,13.597 26.066,13.729 25.424,13.862 C26.066,13.333 26.580,12.804 26.837,11.879 Z'/%3E %3C/svg%3E");
+}
+.ico-facebook-fill {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='37px' height='37px'%3E %3Cpath fill-rule='evenodd' fill='rgb(42, 42, 42)' d='M18.605,36.600 C8.661,36.600 0.599,28.541 0.599,18.600 C0.599,8.658 8.661,0.600 18.605,0.600 C28.549,0.600 36.611,8.658 36.611,18.600 C36.611,28.541 28.549,36.600 18.605,36.600 ZM23.302,16.252 L19.388,16.252 L19.388,13.904 C19.388,13.200 20.249,12.339 20.953,12.339 L23.302,12.339 L23.302,9.208 L20.366,9.208 C18.135,9.208 16.256,11.086 16.256,13.317 L16.256,16.252 L13.908,16.252 L13.908,19.382 L16.256,19.382 L16.256,27.991 L19.388,27.991 L19.388,19.382 L23.302,19.382 L23.302,16.252 Z'/%3E %3C/svg%3E");
+}
+.ico-linkedin-fill {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='37px' height='37px'%3E %3Cpath fill-rule='evenodd' fill='rgb(42, 42, 42)' d='M18.594,36.600 C8.649,36.600 0.588,28.541 0.588,18.599 C0.588,8.658 8.649,0.599 18.594,0.599 C28.538,0.599 36.599,8.658 36.599,18.599 C36.599,28.541 28.538,36.600 18.594,36.600 ZM11.156,26.035 L14.679,26.035 L14.679,15.469 L11.156,15.469 L11.156,26.035 ZM12.917,9.246 C11.743,9.246 10.803,10.185 10.803,11.359 C10.803,12.534 11.743,13.473 12.917,13.473 C14.092,13.473 15.031,12.534 15.031,11.359 C15.031,10.185 14.092,9.246 12.917,9.246 ZM27.598,19.343 C27.598,17.112 25.718,15.234 23.487,15.234 C22.430,15.234 21.138,15.938 20.551,16.878 L20.551,15.469 L17.028,15.469 L17.028,26.035 L20.551,26.035 L20.551,19.813 C20.551,18.873 21.373,18.052 22.313,18.052 C23.252,18.052 24.074,18.873 24.074,19.813 L24.074,26.035 L27.598,26.035 L27.598,19.343 Z'/%3E %3C/svg%3E");
+}
+.ico-email-fill {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='37px' height='37px'%3E %3Cpath fill-rule='evenodd' fill='rgb(42, 42, 42)' d='M18.605,36.599 C8.661,36.599 0.599,28.541 0.599,18.600 C0.599,8.658 8.661,0.600 18.605,0.600 C28.549,0.600 36.611,8.658 36.611,18.600 C36.611,28.541 28.549,36.599 18.605,36.599 ZM28.199,14.431 C28.199,13.484 27.719,13.199 27.719,13.199 L18.599,7.800 L9.479,13.199 C9.479,13.199 9.000,13.484 9.000,14.431 L9.000,23.905 C9.000,24.951 9.859,25.799 10.919,25.799 L26.279,25.799 C27.340,25.799 28.199,24.951 28.199,23.905 L28.199,14.431 ZM10.599,14.431 L18.599,9.694 L26.599,14.431 L18.599,19.168 L10.599,14.431 Z'/%3E %3C/svg%3E");
 }
 /* buttons */
 .btn {}

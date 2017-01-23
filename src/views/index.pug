@@ -93,10 +93,48 @@ head
             .chat__controls__icons
               a(href="#").chat__controls__icon-menu
                 i.ico.ico-user
+                ul.chat__controls__icon-menu__dropdown
+                  li
+                    .chat__controls__icon-menu__dropdown__img
+                      img(src="images/profile_pic_1.png")
+                    span Francesca Lee
+                  li
+                    .chat__controls__icon-menu__dropdown__img
+                      img(src="images/profile_pic_2.png")
+                    span Chris McCoy
+                  li
+                    .chat__controls__icon-menu__dropdown__img
+                      img(src="images/profile_pic_3.png")
+                    span Karen Moore
+                  hr
+                  li
+                    i.ico.ico-invite
+                    span Invite Members
+
               a(href="#").chat__controls__icon-menu
                 i.ico.ico-share
-              a(href="#").chat__controls__icon-menu
+                ul.chat__controls__icon-menu__dropdown.socials
+                  li
+                    i.ico.ico-twiiter-fill
+                    span Twitter
+                  li
+                    i.ico.ico-facebook-fill
+                    span Facebook
+                  li
+                    i.ico.ico-linkedin-fill
+                    span LinkedIn
+                  li
+                    i.ico.ico-email-fill
+                    span Email
+
+              a(href="#").chat__controls__icon-menu.last
                 i.ico.ico-settings
+                ul.chat__controls__icon-menu__dropdown
+                  li View Channel Info
+                  li Notification Preferences
+                  li Set Channel Header
+                  li Set Channel Purpose
+                  li Rename Channel
           // chat navigation
           .chat__navigation
             ul.chat__navigation__tabs

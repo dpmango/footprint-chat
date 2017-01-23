@@ -70,13 +70,13 @@ $(document).ready(function(){
       fakeMessaging(message);
     }
   });
-
   $('.chat__writing-area__submit-message').on('click', function(){
     var message = $('.chat__writing-area__new-message').val();
     fakeMessaging(message);
   });
 
-  function fakeMessaging(message){
+  function fakeMessaging(messageParam){
+    var message = messageParam;
     var messageToHtml =
       "<div class='chat__message'> \
         <div class='chat__message__wrapper--self'> \
@@ -95,8 +95,51 @@ $(document).ready(function(){
     var scrollObject    = $('.chat__scrollable-area');
     var height = scrollObject[0].scrollHeight;
     scrollObject.animate({scrollTop: height}, 1000);
+
+    // Make fake reply after
+    setTimeout(function(){
+      var message = ["Really?", "Sound great!", "Hey! Nice to hear from you", "What's your plan?", "How are you doing", "Love it!"]
+      var randomItem = Math.floor(Math.random() * message.length);
+      var messageToHtml =
+        "<div class='chat__message'> \
+          <div class='chat__message__wrapper--self'> \
+            <div class='chat__message__profile-pic'><img src='images/profile_pic_4.png'></div> \
+            <div class='chat__message__author'> Sergey Khmelevskoy<span>Mon, Jan 23, 16:08 PM</span></div> \
+            <div class='chat__message__content'>"
+            +  "<p>" + message[randomItem] + "</p>" +
+            "</div> \
+            <div class='chat__message__icon'></div> \
+          </div> \
+        </div>";
+      var messageToAppend = $(messageToHtml).hide().fadeIn(1000);
+      $('.chat__messages').append(messageToAppend);
+      scrollObject.animate({scrollTop: height}, 1000);
+    }, 15000);
   }
 
+  // DROPDOWNS
+  $('.chat__controls__icon-menu').on('click', function(){
+    $(this).find('.chat__controls__icon-menu__dropdown').toggleClass('active');
+  });
+
+  $('.chat__controls__icon-menu__dropdown li').on('click', function(e){
+    e.preventDefault();
+    triggerPreloader('error');
+    e.stopPropagation();
+  });
+
+  // active area - exit on click outside
+  $(document).mouseup(function (e) {
+    var container = new Array();
+    container.push($('.chat__controls__icon-menu'));
+    container.push($('.chat__controls__icon-menu__dropdown'));
+
+    $.each(container, function(key, value) {
+        if (!$(value).is(e.target) && $(value).has(e.target).length === 0) {
+            $(value).removeClass('active');
+        }
+    });
+  });
   // MOBILE
   // plain javascript as 3.x not hapy about slideout - refactor
   var slideoutLeft = new Slideout({

@@ -18,6 +18,25 @@
   &--offline
     background: color(white a(30%))
 
+.ico-invite
+  border-radius: 50%
+  overflow: hidden
+  background-image: svg-load('../../images/ico-invite.svg')
+  width: 20px
+  height: 20px
+  background-size: cover
+  position: relative
+  &::after
+    width: 20px
+    height: 20px
+    padding-left: 4px
+    font-size: 16px
+    color: $fontColor
+    content: '+'
+    font-family: 'ProximaNova-Bold'
+    vertical-align: middle
+    text-align: center
+
 // inline svg
 .ico-logo
   background-image: svg-load('../../images/logo.svg')
@@ -88,3 +107,12 @@
   background-image: svg-load('../../images/ico-add-user.svg')
 .ico-search-mobile
   background-image: svg-load('../../images/ico-search-mobile.svg')
+
+.ico-twiiter-fill
+  background-image: svg-load('../../images/ico-twiiter-fill.svg')
+.ico-facebook-fill
+  background-image: svg-load('../../images/ico-facebook-fill.svg')
+.ico-linkedin-fill
+  background-image: svg-load('../../images/ico-linkedin-fill.svg')
+.ico-email-fill
+  background-image: svg-load('../../images/ico-email-fill.svg')
