@@ -9,6 +9,75 @@
     background-size: cover
     background-position: left center
     background: white
+    @media($mobile)
+      display: none
+
+  &__mobile-header
+    display: none
+    background: #262626
+    color: white
+    height: 57px
+    flex-wrap: nowrap
+    justify-content: space-between
+    align-items: center
+    padding-left: 15px
+    @media($mobile)
+      display: flex
+    &__menu-left
+      border-radius: 50%
+      width: 32px
+      height: 32px
+      margin-right: 10px
+      .ico
+        cursor: pointer
+        height: 32px
+        width: 32px
+        background-size: contain
+    &__name
+      text-transform: uppercase
+      flex: 1 1 auto
+      font-size: 18px
+    &__menu-right
+      height: 57px
+      width: 57px
+      background: $darkBg
+      cursor: pointer
+      transition: background .3s ease-in-out
+      position: relative
+      &:hover
+        background: color($darkBg a(60%))
+      .ico
+        position: absolute
+        left: 50%
+        top: 50%
+        margin-left: -13px
+        margin-top: -13px
+        width: 26px
+        height: 26px
+        background-size: contain
+
+  &__mobile-subhead
+    display: none
+    background: $yellowColor
+    justify-content: space-between
+    align-items: center
+    height: 46px
+    padding: 5px 15px
+    @media($mobile)
+      display: flex
+    &__name
+      flex: 1 1 70%
+      font-size: 15px
+    .ico
+      width: 20px
+      height: 20px
+      background-size: contain
+      margin-right: 20px
+    .ico-search-mobile
+      margin-right: 0
+    .ico-lock-fill
+      margin-right: 3%
+      margin-left: 2px
 
   &__controls
     border-bottom: 1px solid $borderColor
@@ -16,6 +85,8 @@
     display: flex
     justify-content: space-between
     background: white
+    @media($mobile)
+      display: none
     &__chat-name
       font-family: 'ProximaNova-Bold'
       font-size: 20px
@@ -52,6 +123,9 @@
     padding: 0 30px 0 25px
     border-bottom: 1px solid $borderColor
     background: white
+    @media($mobile)
+      padding-left: 0
+      padding-right: 0
     &__tabs
       list-style: none
     &__toggler
@@ -68,16 +142,21 @@
       &:hover:not(.active)
         border-bottom: 3px solid $borderColor
 
-
   &__message
     flex: 1 1 auto
     padding: 24px 40px 24px 45px
     background: white
     border-bottom: 1px solid $borderColor
+    @media($mobile)
+      padding: 12px 17px 12px 17px
+    &:last-child
+      border-bottom: none
     &--comment
       margin-left: 95px
       border-left: 3px solid $yellowColor
       background: #fffdf2
+      @media($tablet)
+        margin-left: 50px
       &:nth-child(odd)
         background: white
 
@@ -85,6 +164,8 @@
       display: flex
       flex-direction: row
       justify-content: flex-start
+      @media($mobile)
+        flex-direction: column
     &__profile-pic
       display: inline-block
       border-radius: 50%
@@ -93,6 +174,10 @@
       flex: 0 0 30px
       overflow: hidden
       margin-right: 20px
+      @media($mobile)
+        width: 40px
+        height: 40px
+        flex: 0 0 40px
       img
         display: block
         max-width: 100%
@@ -105,6 +190,11 @@
       margin-right: 45px
       line-height: 1
       margin-top: -1px
+      @media($mobile)
+        margin-left: 60px
+        font-size: 18px
+        margin-bottom: 10px
+        margin-top: -42px
       span
         display: block
         font-family: 'ProximaNova-Light'
@@ -112,16 +202,23 @@
         color: $grayColor
         margin-top: 3px
         line-height: 1.2em
+        @media($mobile)
+          display: none
     &__content
       flex: 1 1 100%
       margin-right: 35px
       margin-top: -5px
+      @media($mobile)
+        margin-left: 60px
       p
         margin: 0
         padding: 0
         padding-bottom: 5px
         font-size: 16px
         line-height: 22px
+        @media($mobile)
+          font-size: 15px
+          line-height: 20px
         a
           color: $blueColor
     &__icon
@@ -130,6 +227,8 @@
       flex: 0 0 20px
       width: 20px
       height: 20px
+      @media($mobile)
+        display: none
       .ico
         width: 100%
         height: 100%
@@ -200,6 +299,10 @@
       color: $fontColor
       border-radius: 0
       padding: 5px 100px 5px 50px
+      @media($mobile)
+        padding-left: 10px
+        padding-right: 50px
+        height: 45px
       &:focus
         outline: none
     &__submit-message
@@ -213,6 +316,8 @@
       height: 35px
       cursor: pointer
       border: 3px solid $yellowColor
+      @media($mobile)
+        display: none
 
     &__smile
       position: absolute
@@ -221,6 +326,9 @@
       width: 15px
       height: 15px
       cursor: pointer
+      @media($mobile)
+        top: 23px
+        right: 60px
       .ico
         background-size: contain
         width: 100%
@@ -232,6 +340,9 @@
       width: 15px
       height: 15px
       cursor: pointer
+      @media($mobile)
+        top: 23px
+        right: 23px
       .ico
         background-size: contain
         width: 100%

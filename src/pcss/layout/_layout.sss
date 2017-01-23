@@ -72,6 +72,7 @@ body, html
   max-width: 80px
   font-size: 1em
   z-index: 99
+  -webkit-overflow-scrolling: touch
   box-shadow: 0px 0px 25px color(black a(20%))
   transition: transform .5s ease-out
   @media($mobile)
@@ -102,8 +103,11 @@ body, html
     right: 0px
     bottom: 72px
     overflow: scroll
+    -webkit-overflow-scrolling: touch
     margin-right: 0px
     margin-bottom: 0px
+    @media($mobile)
+      bottom: 62px
   &__writing-area
     position: absolute
     bottom: 0
@@ -115,9 +119,14 @@ body, html
       height: 72px
       position: relative
       padding: 17px
+      @media($mobile)
+        background: $yellowColor
+        height: 62px
+        padding: 8px
   &__messages
     display: flex
     flex-direction: column
+    
   &.loading
     .preloader
       display: block
@@ -136,6 +145,7 @@ body, html
   background: $fontColor
   min-height: 100vh
   overflow-y: scroll
+  -webkit-overflow-scrolling: touch
   width: 240px
   max-width: 240px
   font-size: 1em
@@ -156,9 +166,24 @@ body, html
     right: 0px
     bottom: 72px
     overflow: scroll
+    -webkit-overflow-scrolling: touch
     margin-right: 0px
     margin-bottom: 0px
 
 .preloader
   display: none
   z-index: 9
+
+
+// slideout
+.slideout-panel
+  position: relative
+  z-index: 1
+  will-change: transform
+
+.slideout-open
+  overflow: hidden
+  body, .slideout-panel
+    overflow: hidden
+  .slideout-menu
+    display: block

@@ -60,6 +60,7 @@ body, html {
     bottom: 0;
     left: 0;
     z-index: 99;
+    -webkit-overflow-scrolling: touch;
     min-height: 340px;
     max-width: 80px;
     width: 80px;
@@ -124,8 +125,14 @@ body, html {
     bottom: 72px;
     left: 0px;
     overflow: scroll;
+    -webkit-overflow-scrolling: touch;
     margin-right: 0px;
     margin-bottom: 0px;
+}
+@media(max-width: 568px) {
+    .chat__scrollable-area {
+        bottom: 62px;
+    }
 }
 .chat__writing-area {
     position: absolute;
@@ -139,6 +146,13 @@ body, html {
     padding: 17px;
     height: 72px;
     background: #e0e0e0;
+}
+@media(max-width: 568px) {
+    .chat__writing-area__wrapper {
+        padding: 8px;
+        height: 62px;
+        background: #fcda00;
+    }
 }
 .chat__messages {
     display: -webkit-box;
@@ -173,6 +187,7 @@ body, html {
     bottom: 0;
     z-index: 99;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     min-height: 100vh;
     max-width: 240px;
     width: 240px;
@@ -212,6 +227,7 @@ body, html {
         -ms-flex-direction: column;
             flex-direction: column;
     overflow: scroll;
+    -webkit-overflow-scrolling: touch;
     margin-right: 0px;
     margin-bottom: 0px;
     -webkit-box-orient: vertical;
@@ -221,6 +237,21 @@ body, html {
 .preloader {
     z-index: 9;
     display: none;
+}
+/* slideout */
+.slideout-panel {
+    position: relative;
+    z-index: 1;
+    will-change: transform;
+}
+.slideout-open {
+    overflow: hidden;
+}
+.slideout-open body, .slideout-open .slideout-panel {
+    overflow: hidden;
+}
+.slideout-open .slideout-menu {
+    display: block;
 }
 /* Helpers */
 .mr1 {
@@ -476,8 +507,12 @@ body, html {
         -ms-flex-align: center;
 }
 .sidebar-right__user-info .ico-status {
+    -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
     margin-right: 0;
     margin-left: 15px;
+    -webkit-box-flex: 0;
 }
 .sidebar-right__user-info__pic {
     display: inline-block;
@@ -499,10 +534,17 @@ body, html {
     -webkit-flex: 1 1 auto;
         -ms-flex: 1 1 auto;
             flex: 1 1 auto;
+    margin-right: 10px;
     vertical-align: middle;
     vertical-align: middle;
     font-size: 14px;
     -webkit-box-flex: 1;
+}
+.sidebar-right__user-info__more {
+    -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    -webkit-box-flex: 0;
 }
 .sidebar-right__user-info__more .ico {
     width: 3px;
@@ -529,6 +571,121 @@ body, html {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
 }
+@media(max-width: 568px) {
+    .chat__header {
+        display: none;
+    }
+}
+.chat__mobile-header {
+    display: none;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    -webkit-align-items: center;
+            align-items: center;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+    padding-left: 15px;
+    height: 57px;
+    background: #262626;
+    color: white;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+}
+@media(max-width: 568px) {
+    .chat__mobile-header {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+    }
+}
+.chat__mobile-header__menu-left {
+    margin-right: 10px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+.chat__mobile-header__menu-left .ico {
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    cursor: pointer;
+}
+.chat__mobile-header__name {
+    -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    text-transform: uppercase;
+    font-size: 18px;
+    -webkit-box-flex: 1;
+}
+.chat__mobile-header__menu-right {
+    position: relative;
+    width: 57px;
+    height: 57px;
+    background: #3e3e3e;
+    cursor: pointer;
+    -webkit-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+}
+.chat__mobile-header__menu-right .ico {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -13px;
+    margin-left: -13px;
+    width: 26px;
+    height: 26px;
+    background-size: contain;
+}
+.chat__mobile-header__menu-right:hover {
+    background: rgba(62, 62, 62, 0.6);
+}
+.chat__mobile-subhead {
+    display: none;
+    -webkit-align-items: center;
+            align-items: center;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+    padding: 5px 15px;
+    height: 46px;
+    background: #fcda00;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+}
+.chat__mobile-subhead .ico {
+    margin-right: 20px;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+}
+.chat__mobile-subhead .ico-search-mobile {
+    margin-right: 0;
+}
+.chat__mobile-subhead .ico-lock-fill {
+    margin-right: 3%;
+    margin-left: 2px;
+}
+@media(max-width: 568px) {
+    .chat__mobile-subhead {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+    }
+}
+.chat__mobile-subhead__name {
+    -webkit-flex: 1 1 70%;
+        -ms-flex: 1 1 70%;
+            flex: 1 1 70%;
+    font-size: 15px;
+    -webkit-box-flex: 1;
+}
 .chat__controls {
     display: -webkit-box;
     display: -webkit-flex;
@@ -541,6 +698,11 @@ body, html {
     background: white;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
+}
+@media(max-width: 568px) {
+    .chat__controls {
+        display: none;
+    }
 }
 .chat__controls__chat-name {
     margin-right: 10px;
@@ -589,6 +751,12 @@ body, html {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
 }
+@media(max-width: 568px) {
+    .chat__navigation {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
 .chat__navigation__tabs {
     list-style: none;
 }
@@ -618,10 +786,23 @@ body, html {
     background: white;
     -webkit-box-flex: 1;
 }
+@media(max-width: 568px) {
+    .chat__message {
+        padding: 12px 17px 12px 17px;
+    }
+}
+.chat__message:last-child {
+    border-bottom: none;
+}
 .chat__message--comment {
     margin-left: 95px;
     border-left: 3px solid #fcda00;
     background: #fffdf2;
+}
+@media(max-width: 768px) {
+    .chat__message--comment {
+        margin-left: 50px;
+    }
 }
 .chat__message--comment:nth-child(odd) {
     background: white;
@@ -641,6 +822,15 @@ body, html {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
 }
+@media(max-width: 568px) {
+    .chat__message__wrapper--self {
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+    }
+}
 .chat__message__profile-pic {
     display: inline-block;
     -webkit-flex: 0 0 30px;
@@ -658,6 +848,16 @@ body, html {
     max-width: 100%;
     max-height: 100%;
     border-radius: 50px;
+}
+@media(max-width: 568px) {
+    .chat__message__profile-pic {
+        -webkit-flex: 0 0 40px;
+            -ms-flex: 0 0 40px;
+                flex: 0 0 40px;
+        width: 40px;
+        height: 40px;
+        -webkit-box-flex: 0;
+    }
 }
 .chat__message__author {
     -webkit-flex: 1 0 auto;
@@ -678,6 +878,19 @@ body, html {
     font-family: 'ProximaNova-Light';
     line-height: 1.2em;
 }
+@media(max-width: 568px) {
+    .chat__message__author {
+        margin-top: -42px;
+        margin-bottom: 10px;
+        margin-left: 60px;
+        font-size: 18px;
+    }
+}
+@media(max-width: 568px) {
+    .chat__message__author span {
+        display: none;
+    }
+}
 .chat__message__content {
     -webkit-flex: 1 1 100%;
         -ms-flex: 1 1 100%;
@@ -696,6 +909,17 @@ body, html {
 .chat__message__content p a {
     color: #007fe0;
 }
+@media(max-width: 568px) {
+    .chat__message__content {
+        margin-left: 60px;
+    }
+}
+@media(max-width: 568px) {
+    .chat__message__content p {
+        font-size: 15px;
+        line-height: 20px;
+    }
+}
 .chat__message__icon {
     -webkit-flex: 0 0 20px;
         -ms-flex: 0 0 20px;
@@ -710,6 +934,11 @@ body, html {
     width: 100%;
     height: 100%;
     background-size: contain;
+}
+@media(max-width: 568px) {
+    .chat__message__icon {
+        display: none;
+    }
 }
 .chat__message__wrapper--replies {
     display: -webkit-box;
@@ -798,6 +1027,13 @@ body, html {
     background: white;
     color: #2a2a2a;
 }
+@media(max-width: 568px) {
+    .chat__writing-area__new-message {
+        padding-right: 50px;
+        padding-left: 10px;
+        height: 45px;
+    }
+}
 .chat__writing-area__new-message:focus {
     outline: none;
 }
@@ -813,6 +1049,11 @@ body, html {
     background-size: 20px;
     cursor: pointer;
 }
+@media(max-width: 568px) {
+    .chat__writing-area__submit-message {
+        display: none;
+    }
+}
 .chat__writing-area__smile {
     position: absolute;
     top: 27px;
@@ -826,6 +1067,12 @@ body, html {
     height: 100%;
     background-size: contain;
 }
+@media(max-width: 568px) {
+    .chat__writing-area__smile {
+        top: 23px;
+        right: 60px;
+    }
+}
 .chat__writing-area__attach {
     position: absolute;
     top: 27px;
@@ -838,6 +1085,12 @@ body, html {
     width: 100%;
     height: 100%;
     background-size: contain;
+}
+@media(max-width: 568px) {
+    .chat__writing-area__attach {
+        top: 23px;
+        right: 23px;
+    }
 }
 
 /* 3. Elements */
@@ -939,6 +1192,22 @@ body, html {
 }
 .ico-more {
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='6px' height='24px'%3E %3Cpath fill-rule='evenodd' fill='rgb(255, 255, 255)' d='M2.700,14.600 C1.208,14.600 -0.000,13.391 -0.000,11.900 C-0.000,10.408 1.208,9.200 2.700,9.200 C4.191,9.200 5.400,10.408 5.400,11.900 C5.400,13.391 4.191,14.600 2.700,14.600 ZM2.700,5.600 C1.208,5.600 -0.000,4.391 -0.000,2.900 C-0.000,1.408 1.208,0.200 2.700,0.200 C4.191,0.200 5.400,1.408 5.400,2.900 C5.400,4.391 4.191,5.600 2.700,5.600 ZM2.700,18.200 C4.191,18.200 5.400,19.409 5.400,20.900 C5.400,22.391 4.191,23.600 2.700,23.600 C1.208,23.600 -0.000,22.391 -0.000,20.900 C-0.000,19.409 1.208,18.200 2.700,18.200 Z'/%3E %3C/svg%3E");
+}
+/* mobile */
+.ico-hamburger {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='94px' height='94px'%3E %3Cpath fill-rule='evenodd' fill='rgb(254, 220, 3)' d='M47.380,93.937 C21.666,93.937 0.820,73.055 0.820,47.296 C0.820,21.537 21.666,0.655 47.380,0.655 C73.094,0.655 93.940,21.537 93.940,47.296 C93.940,73.055 73.094,93.937 47.380,93.937 ZM35.748,23.957 L24.081,23.957 L24.081,35.644 L35.748,35.644 L35.748,23.957 ZM35.748,41.453 L24.081,41.453 L24.081,53.140 L35.748,53.140 L35.748,41.453 ZM35.748,58.949 L24.081,58.949 L24.081,70.636 L35.748,70.636 L35.748,58.949 ZM53.213,23.957 L41.547,23.957 L41.547,35.644 L53.213,35.644 L53.213,23.957 ZM53.213,41.453 L41.547,41.453 L41.547,53.140 L53.213,53.140 L53.213,41.453 ZM53.213,58.949 L41.547,58.949 L41.547,70.636 L53.213,70.636 L53.213,58.949 ZM70.679,23.957 L59.012,23.957 L59.012,35.644 L70.679,35.644 L70.679,23.957 ZM70.679,41.453 L59.012,41.453 L59.012,53.140 L70.679,53.140 L70.679,41.453 ZM70.679,58.949 L59.012,58.949 L59.012,70.636 L70.679,70.636 L70.679,58.949 Z'/%3E %3C/svg%3E");
+}
+.ico-lock-fill {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='44px' height='48px'%3E %3Cpath fill-rule='evenodd' fill='rgb(38, 38, 38)' d='M43.237,42.470 C43.237,44.029 42.124,44.775 40.363,45.077 C34.351,46.234 27.996,47.349 21.863,47.349 C15.729,47.349 9.374,46.234 3.362,45.077 C1.601,44.775 0.488,44.029 0.488,42.470 L0.516,24.010 C0.516,20.789 3.122,18.177 6.337,18.177 L6.337,16.232 C6.337,7.641 13.288,0.676 21.862,0.676 C30.437,0.676 37.387,7.641 37.387,16.232 L37.387,18.177 C40.603,18.177 43.209,20.789 43.209,24.010 L43.237,42.470 ZM31.566,16.232 C31.566,10.863 27.221,6.510 21.862,6.510 C16.504,6.510 12.159,10.863 12.159,16.232 L12.159,18.177 L31.566,18.177 L31.566,16.232 Z'/%3E %3C/svg%3E");
+}
+.ico-exit {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='59px' height='58px'%3E %3Cpath fill-rule='evenodd' fill='rgb(38, 38, 38)' d='M58.612,29.038 L39.212,49.456 L39.212,39.733 L21.747,39.733 L21.747,18.343 L39.212,18.343 L39.212,8.621 L58.612,29.038 ZM4.281,12.510 L4.281,45.567 C4.281,49.862 7.757,53.345 12.044,53.345 L33.391,53.345 L33.391,57.234 L12.044,57.234 C5.613,57.234 0.400,52.010 0.400,45.567 L0.400,12.510 C0.400,6.066 5.613,0.842 12.044,0.842 L33.391,0.842 L33.391,4.732 L12.044,4.732 C7.757,4.732 4.281,8.214 4.281,12.510 Z'/%3E %3C/svg%3E");
+}
+.ico-add-user {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='67px' height='56px'%3E %3Cpath fill-rule='evenodd' fill='rgb(38, 38, 38)' d='M14.244,55.289 L14.244,43.622 C14.244,37.179 19.457,31.955 25.887,31.955 L32.684,31.955 C27.486,29.173 23.947,23.688 23.947,17.371 C23.947,8.242 31.332,0.842 40.442,0.842 C49.552,0.842 56.937,8.242 56.937,17.371 C56.937,23.688 53.398,29.173 48.200,31.955 L54.997,31.955 C61.428,31.955 66.641,37.179 66.641,43.622 L66.641,55.289 L14.244,55.289 ZM53.056,17.371 C53.056,10.390 47.409,4.731 40.442,4.731 C33.476,4.731 27.828,10.390 27.828,17.371 C27.828,24.352 33.476,30.010 40.442,30.010 C47.409,30.010 53.056,24.352 53.056,17.371 ZM62.759,43.622 C62.759,39.326 59.284,35.844 54.997,35.844 L25.887,35.844 C21.600,35.844 18.125,39.326 18.125,43.622 L18.125,51.400 L62.759,51.400 L62.759,43.622 ZM10.362,31.955 L6.481,31.955 L6.481,26.121 L0.659,26.121 L0.659,22.232 L6.481,22.232 L6.481,16.399 L10.362,16.399 L10.362,22.232 L16.184,22.232 L16.184,26.121 L10.362,26.121 L10.362,31.955 Z'/%3E %3C/svg%3E");
+}
+.ico-search-mobile {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='57px' height='58px'%3E %3Cpath fill-rule='evenodd' fill='rgb(38, 38, 38)' d='M33.494,47.511 C28.079,47.511 23.108,45.643 19.153,42.537 L4.488,57.231 L0.505,53.241 L15.171,38.546 C12.071,34.583 10.206,29.603 10.206,24.177 C10.206,11.290 20.632,0.842 33.494,0.842 C46.355,0.842 56.781,11.290 56.781,24.177 C56.781,37.064 46.355,47.511 33.494,47.511 ZM33.494,6.676 C23.848,6.676 16.028,14.511 16.028,24.177 C16.028,33.842 23.848,41.678 33.494,41.678 C43.140,41.678 50.959,33.842 50.959,24.177 C50.959,14.511 43.140,6.676 33.494,6.676 Z'/%3E %3C/svg%3E");
 }
 /* buttons */
 .btn {}

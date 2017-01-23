@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html></html>
+<html lang="en"></html>
 <head>
   <!-- MADE WITH LOVE BY <> SERGEY KHMELEVSKOY </>-->
   <meta charset="UTF-8">
+  <meta http-equiv="cleartype" content="on">
+  <meta name="MobileOptimized" content="320">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Chat</title>
   <!--build:js js/main.min.js-->
-  <script src="/js/lib/jquery-3.1.1.min.js"></script>
-  <script src="/js/main.js"></script>
+  <script src="js/lib/jquery-3.1.1.min.js"></script>
+  <script src="components/slideout.js/dist/slideout.min.js"></script>
+  <script src="js/main.js"></script>
   <!--endbuild-->
   <!--build:css css/style.min.css-->
   <link rel="stylesheet" href="components/normalize-css/normalize.css" type="text/css">
@@ -30,6 +35,16 @@
       <!-- CHAT CONTENT-->
       <div class="chat">
         <div class="chat__scrollable-area">
+          <!-- mobile header-->
+          <div class="chat__mobile-header">
+            <div class="chat__mobile-header__menu-left"><i class="ico ico-hamburger"></i></div>
+            <div class="chat__mobile-header__name">Footprint HQ</div>
+            <div class="chat__mobile-header__menu-right"><i class="ico ico-logo"></i></div>
+          </div>
+          <!-- mobile subheader-->
+          <div class="chat__mobile-subhead"><i class="ico ico-lock-fill"></i>
+            <div class="chat__mobile-subhead__name">Staff</div><a href="#"><i class="ico ico-exit"></i></a><a href="#"><i class="ico ico-add-user"></i></a><a href="#"><i class="ico ico-search-mobile"></i></a>
+          </div>
           <div class="chat__header" style="background-image: url('../images/chat_header.png')"></div>
           <!-- controls(subheaders)-->
           <div class="chat__controls">

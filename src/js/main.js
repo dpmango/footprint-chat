@@ -46,4 +46,45 @@ $(document).ready(function(){
     }
   });
 
+  // MOBILE
+  // plain javascript as 3.x not hapy about slideout - refactor
+  var slideoutLeft = new Slideout({
+    'panel': document.querySelector('.chat'),
+    'menu': document.querySelector('.sidebar-left'),
+    'padding': 80,
+    'tolerance': 70,
+    'easing': 'ease-out'
+  });
+  slideoutLeft.on('beforeopen', function() {
+    $('.sidebar-left').addClass('active');
+  });
+  slideoutLeft.on('beforeclose', function() {
+    $('.sidebar-left').removeClass('active');
+  });
+
+  var slideoutRight = new Slideout({
+    'panel': document.querySelector('.chat'),
+    'menu': document.querySelector('.sidebar-right'),
+    'padding': 240,
+    'tolerance': 70,
+    'easing': 'ease-out',
+    'side': 'right'
+  });
+  slideoutRight.on('beforeopen', function() {
+    $('.sidebar-right').addClass('active');
+  });
+  slideoutRight.on('beforeclose', function() {
+    $('.sidebar-right').removeClass('active');
+  });
+
+  // Toggle button
+  document.querySelector('.ico-hamburger').addEventListener('click', function() {
+    slideoutLeft.toggle();
+  });
+
+  document.querySelector('.chat__mobile-header__menu-right').addEventListener('click', function() {
+    slideoutRight.toggle();
+  });
+
+
 });

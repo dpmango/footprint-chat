@@ -1,13 +1,19 @@
 doctype html
-html
+html(lang="en")
 head
   // MADE WITH LOVE BY <> SERGEY KHMELEVSKOY </>
   meta(charset="UTF-8")
+  meta(http-equiv='cleartype', content='on')
+  meta(name='MobileOptimized', content='320')
+  meta(name='HandheldFriendly', content='True')
+  meta(name='apple-mobile-web-app-capable', content='yes')
+
   meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
   title Chat
   //build:js js/main.min.js
-  script(src="/js/lib/jquery-3.1.1.min.js")
-  script(src="/js/main.js")
+  script(src="js/lib/jquery-3.1.1.min.js")
+  script(src="components/slideout.js/dist/slideout.min.js")
+  script(src="js/main.js")
   //endbuild
 
   //build:css css/style.min.css
@@ -60,6 +66,23 @@ head
       // CHAT CONTENT
       .chat
         .chat__scrollable-area
+          // mobile header
+          .chat__mobile-header
+            .chat__mobile-header__menu-left
+              i.ico.ico-hamburger
+            .chat__mobile-header__name Footprint HQ
+            .chat__mobile-header__menu-right
+              i.ico.ico-logo
+          // mobile subheader
+          .chat__mobile-subhead
+            i.ico.ico-lock-fill
+            .chat__mobile-subhead__name Staff
+            a(href="#")
+              i.ico.ico-exit
+            a(href="#")
+              i.ico.ico-add-user
+            a(href="#")
+              i.ico.ico-search-mobile
           .chat__header(style="background-image: url('../images/chat_header.png')")
           // controls(subheaders)
           .chat__controls
