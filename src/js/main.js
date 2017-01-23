@@ -67,11 +67,13 @@ $(document).ready(function(){
   $('.chat__writing-area__new-message').keyup(function(e){
     if(e.keyCode == 13){
       var message = $(this).val();
+      $(this).val('');
       fakeMessaging(message);
     }
   });
   $('.chat__writing-area__submit-message').on('click', function(){
     var message = $('.chat__writing-area__new-message').val();
+    $('.chat__writing-area__new-message').val('');
     fakeMessaging(message);
   });
 
@@ -98,7 +100,7 @@ $(document).ready(function(){
 
     // Make fake reply after
     setTimeout(function(){
-      var message = ["Really?", "Sound great!", "Hey! Nice to hear from you", "What's your plan?", "How are you doing", "Love it!"]
+      var message = ["Really?", "Sounds great!", "Hey! Nice to hear from you", "What's your plan?", "How are you doing?", "Love it!", "Yeh, I think this is right", "Maybe later on", "Have you talked with Francesca about that?", "Im not sure if I understand you", "Can we discuss it later?", "Please the the attachement above. We already did that", "No.", "Thanks!"]
       var randomItem = Math.floor(Math.random() * message.length);
       var messageToHtml =
         "<div class='chat__message'> \
