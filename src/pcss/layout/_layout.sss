@@ -67,14 +67,14 @@ body, html
   bottom: 0
   background: $yellowColor
   height: 100vh
-  min-height: 340px
+  min-height: 300px
   width: 80px
   max-width: 80px
   font-size: 1em
   z-index: 99
   -webkit-overflow-scrolling: touch
   box-shadow: 0px 0px 25px color(black a(20%))
-  transition: transform .5s ease-out
+  transition: transform .5s ease
   @media($mobile)
     transform: translate3d(-80px, 0, 0)
     &.active
@@ -90,11 +90,13 @@ body, html
   margin-left: 80px
   margin-right: 240px
   background: #eaeaea
-  transition: margin .4s ease-out
+  transition: margin .4s ease
   @media($desktop)
     margin-right: 0
   @media($mobile)
     margin-left: 0
+  @media($mobile-from)
+    transform: translateX(0px) !important
 
   &__scrollable-area
     position: absolute
@@ -126,7 +128,7 @@ body, html
   &__messages
     display: flex
     flex-direction: column
-    
+
   &.loading
     .preloader
       display: block
@@ -151,7 +153,7 @@ body, html
   font-size: 1em
   z-index: 99
   box-shadow: -5px 0px 25px color(black a(20%))
-  transition: transform .5s ease-out
+  transition: transform .5s ease
   @media($desktop)
     transform: translate3d(240px, 0, 0)
     &.active

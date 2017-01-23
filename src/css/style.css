@@ -61,7 +61,7 @@ body, html {
     left: 0;
     z-index: 99;
     -webkit-overflow-scrolling: touch;
-    min-height: 340px;
+    min-height: 300px;
     max-width: 80px;
     width: 80px;
     height: 100vh;
@@ -69,10 +69,10 @@ body, html {
     -webkit-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
             box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     font-size: 1em;
-    -webkit-transition: -webkit-transform .5s ease-out;
-    transition: -webkit-transform .5s ease-out;
-    transition: transform .5s ease-out;
-    transition: transform .5s ease-out, -webkit-transform .5s ease-out;
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
+    transition: transform .5s ease, -webkit-transform .5s ease;
 }
 @media(max-width: 568px) {
     .sidebar-left {
@@ -102,8 +102,8 @@ body, html {
     width: auto;
     height: 100%;
     background: #eaeaea;
-    -webkit-transition: margin .4s ease-out;
-    transition: margin .4s ease-out;
+    -webkit-transition: margin .4s ease;
+    transition: margin .4s ease;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-box-flex: 1;
@@ -116,6 +116,13 @@ body, html {
 @media(max-width: 568px) {
     .chat {
         margin-left: 0;
+    }
+}
+@media(min-width: 568px) {
+    .chat {
+        -webkit-transform: translateX(0px) !important;
+            -ms-transform: translateX(0px) !important;
+                transform: translateX(0px) !important;
     }
 }
 .chat__scrollable-area {
@@ -195,10 +202,10 @@ body, html {
     -webkit-box-shadow: -5px 0px 25px rgba(0, 0, 0, 0.2);
             box-shadow: -5px 0px 25px rgba(0, 0, 0, 0.2);
     font-size: 1em;
-    -webkit-transition: -webkit-transform .5s ease-out;
-    transition: -webkit-transform .5s ease-out;
-    transition: transform .5s ease-out;
-    transition: transform .5s ease-out, -webkit-transform .5s ease-out;
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
+    transition: transform .5s ease, -webkit-transform .5s ease;
 }
 @media(max-width: 992px) {
     .sidebar-right {
@@ -329,6 +336,14 @@ body, html {
     background-size: contain;
     background-repeat: no-repeat;/* fill: currentColor */
 }
+.sidebar-left__nav-icon .ico.ico-messages {
+    max-height: 17px;
+}
+@media(max-height: 340px) {
+    .sidebar-left__nav-icon .ico {
+        display: none;
+    }
+}
 .sidebar-left__nav-title {
     display: block;
     margin-top: 5px;
@@ -354,6 +369,8 @@ body, html {
     color: white;
 }
 .sidebar-right__section--border {
+    padding-top: 18px;
+    padding-bottom: 18px;
     border-top: 1px solid #656565;
 }
 .sidebar-right__section--lighter {
@@ -720,8 +737,12 @@ body, html {
     background-repeat: no-repeat;
 }
 .chat__controls__icons {
+    -webkit-flex: 1 0 140px;
+        -ms-flex: 1 0 140px;
+            flex: 1 0 140px;
     margin-top: 7px;
     text-align: right;
+    -webkit-box-flex: 1;
 }
 .chat__controls__icons .ico {
     width: 20px;
@@ -866,6 +887,7 @@ body, html {
     background: white;
 }
 .chat__message__wrapper--self {
+    position: relative;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -998,6 +1020,19 @@ body, html {
         display: none;
     }
 }
+.chat__message__mobile-time {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    color: #b4b4b4;
+    font-size: 13px;
+}
+@media(max-width: 568px) {
+    .chat__message__mobile-time {
+        display: inline-block;
+    }
+}
 .chat__message__wrapper--replies {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1084,6 +1119,8 @@ body, html {
     border-radius: 0;
     background: white;
     color: #2a2a2a;
+    -webkit-transition: outline .2s ease;
+    transition: outline .2s ease;
 }
 @media(max-width: 568px) {
     .chat__writing-area__new-message {
@@ -1094,6 +1131,7 @@ body, html {
 }
 .chat__writing-area__new-message:focus {
     outline: none;
+    outline: 2px solid #fcda00;
 }
 .chat__writing-area__submit-message {
     position: absolute;

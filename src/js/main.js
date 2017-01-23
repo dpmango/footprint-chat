@@ -103,8 +103,8 @@ $(document).ready(function(){
       var messageToHtml =
         "<div class='chat__message'> \
           <div class='chat__message__wrapper--self'> \
-            <div class='chat__message__profile-pic'><img src='images/profile_pic_4.png'></div> \
-            <div class='chat__message__author'> Sergey Khmelevskoy<span>Mon, Jan 23, 16:08 PM</span></div> \
+            <div class='chat__message__profile-pic'><img src='images/Koala.png'></div> \
+            <div class='chat__message__author'> Koala<span>Mon, Jan 23, 16:08 PM</span></div> \
             <div class='chat__message__content'>"
             +  "<p>" + message[randomItem] + "</p>" +
             "</div> \
@@ -114,7 +114,7 @@ $(document).ready(function(){
       var messageToAppend = $(messageToHtml).hide().fadeIn(1000);
       $('.chat__messages').append(messageToAppend);
       scrollObject.animate({scrollTop: height}, 1000);
-    }, 15000);
+    }, 5000);
   }
 
   // DROPDOWNS
@@ -178,6 +178,21 @@ $(document).ready(function(){
 
   document.querySelector('.chat__mobile-header__menu-right').addEventListener('click', function() {
     slideoutRight.toggle();
+  });
+
+  $('.sidebar-left__nav-icon .ico-logo').on('click', function(){
+    if($(window).width() < 992 && $(window).width() > 568 ){
+      $('.sidebar-right').toggleClass('active');
+    }else{
+      $('.sidebar-right').removeClass('active');
+    }
+  });
+
+  $(window).resize(function() {
+    if($(window).width() < 568 ){
+      $('.sidebar-right').removeClass('active');
+      $('.chat').css('transform', 'translateX(0)');
+    }
   });
 
 

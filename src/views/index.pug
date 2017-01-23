@@ -154,6 +154,7 @@ head
                   p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In est felis, molestie interdum mi eget, rutrum placerat eros. Vestibulum venenatis risus tristique ullamcorper posuere.
                 .chat__message__icon
                   i.ico.ico-message-buble
+                .chat__message__mobile-time 2:32pm
               .chat__message__wrapper--replies
                 .chat__message__replies-count
                   i.ico.ico-message-buble
@@ -169,6 +170,7 @@ head
                 .chat__message__content
                   p Proin diam lacus, vestibulum vitae dolor eget, sollicitudin molestie ipsum. Praesent et erat pellent esque, dignissim metus quis, porta mi. Quisque quam eros, suscipit eget massa ut, laoreet luctus sem. Morbi lobortis tincidunt nisi, et congue arcu faucibus id dapibus vel leo.
                 .chat__message__icon
+                .chat__message__mobile-time 3:46pm
             //next message
             .chat__message(data-id="" data-origin="").chat__message--comment
               .chat__message__wrapper--self
@@ -181,6 +183,7 @@ head
                   p <a href="#">@ChrisMcCoy</a> Mauris ac diam eget orci placerat faucibus in venenatis mi.
                 .chat__message__icon
                   i.ico.ico-message-mention
+                .chat__message__mobile-time 3:55pm
             //next message
             .chat__message(data-id="")
               .chat__message__wrapper--self
@@ -192,6 +195,7 @@ head
                 .chat__message__content
                   p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In est felis, molestie interdum mi eget, rutrum placerat eros. Vestibulum venenatis risus tristique ullamcorper posuere.
                 .chat__message__icon
+                .chat__message__mobile-time 4:30pm
 
             //next message
             .chat__message(data-id="")
@@ -213,6 +217,7 @@ head
                       .chat__message__attachment__info__size 795KB PNG file
                 .chat__message__icon
                   i.ico.ico-message-file
+                .chat__message__mobile-time 4:46pm
 
             // JUST COPY/PASTE SAME STUFF HERE
             .chat__message(data-id="")
@@ -226,6 +231,7 @@ head
                   p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In est felis, molestie interdum mi eget, rutrum placerat eros. Vestibulum venenatis risus tristique ullamcorper posuere.
                 .chat__message__icon
                   i.ico.ico-message-buble
+                .chat__message__mobile-time 5:26pm
               .chat__message__wrapper--replies
                 .chat__message__replies-count
                   i.ico.ico-message-buble
@@ -241,6 +247,7 @@ head
                 .chat__message__content
                   p Proin diam lacus, vestibulum vitae dolor eget, sollicitudin molestie ipsum. Praesent et erat pellent esque, dignissim metus quis, porta mi. Quisque quam eros, suscipit eget massa ut, laoreet luctus sem. Morbi lobortis tincidunt nisi, et congue arcu faucibus id dapibus vel leo.
                 .chat__message__icon
+                .chat__message__mobile-time 5:46pm
             //next message
             .chat__message(data-id="" data-origin="").chat__message--comment
               .chat__message__wrapper--self
@@ -253,6 +260,7 @@ head
                   p <a href="#">@ChrisMcCoy</a> Mauris ac diam eget orci placerat faucibus in venenatis mi.
                 .chat__message__icon
                   i.ico.ico-message-mention
+                .chat__message__mobile-time 6:13pm
             //next message
             .chat__message(data-id="" data-origin="").chat__message--comment
               .chat__message__wrapper--self
@@ -264,6 +272,7 @@ head
                 .chat__message__content
                   p Proin diam lacus, vestibulum vitae dolor eget, sollicitudin molestie ipsum. Praesent et erat pellent esque, dignissim metus quis, porta mi. Quisque quam eros, suscipit eget massa ut, laoreet luctus sem. Morbi lobortis tincidunt nisi, et congue arcu faucibus id dapibus vel leo.
                 .chat__message__icon
+                .chat__message__mobile-time 6:16pm
             //next message
             .chat__message(data-id="")
               .chat__message__wrapper--self
@@ -275,6 +284,7 @@ head
                 .chat__message__content
                   p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In est felis, molestie interdum mi eget, rutrum placerat eros. Vestibulum venenatis risus tristique ullamcorper posuere.
                 .chat__message__icon
+                .chat__message__mobile-time 1 day ago
         // preloader
         .preloader(aria-busy='true', aria-label='Loading, please wait.', role='progressbar')
           i.ico.ico-logo
@@ -367,20 +377,19 @@ head
                   span Members (22,841)
                   i.ico.ico-toggler +
                 .sidebar-right__control-dropdown__content
-                  .sidebar-right__control-dropdown__content.active
-                    a(href="#").sidebar-right__content-link.show-always
-                      i.ico.ico-status.ico-status--online
-                      span Francesca Lee
-                    a(href="#").sidebar-right__content-link.show-always
-                      i.ico.ico-status.ico-status--online
-                      span Karen Moore
-                    a(href="#").sidebar-right__content-link
-                      i.ico.ico-status.ico-status--offline
-                      span Sergey Khmelevs...
-                    a(href="#").sidebar-right__content-link
-                      i.ico.ico-status.ico-status--offline
-                      span Chris McCoy
-                    a(href="#").sidebar-right__content-toggler(data-hidden-cout="1") +2 more...
+                  a(href="#").sidebar-right__content-link.show-always
+                    i.ico.ico-status.ico-status--online
+                    span Francesca Lee
+                  a(href="#").sidebar-right__content-link.show-always
+                    i.ico.ico-status.ico-status--online
+                    span Karen Moore
+                  a(href="#").sidebar-right__content-link
+                    i.ico.ico-status.ico-status--offline
+                    span Sergey Khmelevs...
+                  a(href="#").sidebar-right__content-link
+                    i.ico.ico-status.ico-status--offline
+                    span Chris McCoy
+                  a(href="#").sidebar-right__content-toggler(data-hidden-cout="1") +2 more...
             //next section
             .sidebar-right__section.sidebar-right__section--lighter.sidebar-right__section--border
               .sidebar-right__control-dropdown
